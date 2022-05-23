@@ -11,14 +11,20 @@ import java.util.List;
 @Table(name = "partija")
 public abstract class Partija extends Entitet {
 
+    @Column(name = "dokolikoseigra")
     private int doKolikoSeIgra;
     @ManyToOne (cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="lokacija")
     private Lokacija lokacija;
     @ManyToOne (cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="unosi")
     private Igrac unosi;
-    @OneToMany(targetEntity = MjesanjeTriUnosa.class, cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "partija")
     private List<Mjesanje> mjesanja = new ArrayList<>();
     @ManyToMany (cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "partija"),
+            inverseJoinColumns = @JoinColumn(name = "igrac"))
     private List<Igrac> igraci = new ArrayList<>();
 
 

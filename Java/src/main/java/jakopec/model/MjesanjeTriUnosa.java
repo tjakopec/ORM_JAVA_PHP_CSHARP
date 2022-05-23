@@ -1,5 +1,6 @@
 package jakopec.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -9,8 +10,10 @@ import jakarta.persistence.Table;
 public class MjesanjeTriUnosa extends MjesanjeDvaUnosa {
 
 
+    @Column(name = "bodovatreciunos")
     private int bodovaTreciUnos;
 
+    @Column(name = "zvanjetreciunos")
     private int zvanjeTreciUnos;
 
     public int getBodovaTreciUnos() {

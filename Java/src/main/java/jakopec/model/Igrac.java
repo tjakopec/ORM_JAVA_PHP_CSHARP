@@ -1,5 +1,6 @@
 package jakopec.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -9,6 +10,7 @@ public class Igrac extends Entitet {
 
     private String ime;
     private String prezime;
+    @Column(name = "urlslika")
     private String urlSlika;
     private int spol;
 

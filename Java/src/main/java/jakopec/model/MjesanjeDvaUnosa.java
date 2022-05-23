@@ -6,10 +6,14 @@ import jakarta.persistence.*;
 @DiscriminatorValue("dvaUnosa")
 public class MjesanjeDvaUnosa extends Mjesanje {
 
+    @Column(name = "bodovaprviunos")
     private int bodovaPrviUnos;
+    @Column(name = "bodovadrugiunos")
     private int bodovaDrugiUnos;
 
+    @Column(name = "zvanjeprviunos")
     private int zvanjePrviUnos;
+    @Column(name = "zvanjedrugiunos")
     private int zvanjeDrugiUnos;
 
 

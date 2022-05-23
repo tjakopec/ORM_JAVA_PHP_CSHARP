@@ -3,7 +3,6 @@ package jakopec;
 
 import jakopec.model.*;
 import jakopec.pomocno.HibernateUtil;
-import jakopec.pomocno.Json;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class Start {
         for (Partija partija: partije) {
             System.out.println(partija);
         }
-        System.out.println("---------------");
+        // Podaci iz baze
         List<Partija> partijeDvaIgraca = s.createQuery(
                 "from Partija",Partija.class).list();
         for (Partija partija: partijeDvaIgraca) {

@@ -14,8 +14,20 @@ public abstract class Mjesanje extends Entitet {
 
     private boolean stiglja;
     private boolean belot;
+    @Column(name = "datumunosa")
     private Date datumUnosa = new Date();
 
+    @ManyToOne(targetEntity = PartijaTriIgraca.class, cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="partija")
+    private Partija partija;
+
+    public Partija getPartija() {
+        return partija;
+    }
+
+    public void setPartija(Partija partija) {
+        this.partija = partija;
+    }
 
     public boolean isBelot() {
         return belot;
