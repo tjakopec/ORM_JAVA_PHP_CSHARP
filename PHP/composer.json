@@ -1,0 +1,18 @@
+{
+  "name": "jakopec-php/orm-belablok",
+  "description": "Implementacija ORM u PHP-u.",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Tomislav Jakopec",
+      "email": "tjakopec@ffos.hr"
+    }
+  ],
+  "require": {
+    "doctrine/orm": "^2.6.2",
+    "symfony/yaml": "2.*"
+  },
+  "autoload": {
+    "psr-0": {"": "src/"}
+  }
+}
