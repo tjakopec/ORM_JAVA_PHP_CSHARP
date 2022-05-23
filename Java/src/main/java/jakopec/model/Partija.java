@@ -1,14 +1,24 @@
 package jakopec.model;
 
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "vrsta", discriminatorType = DiscriminatorType.STRING)
+@Table(name = "partija")
 public abstract class Partija extends Entitet {
 
     private int doKolikoSeIgra;
+    @ManyToOne (cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private Lokacija lokacija;
+    @ManyToOne (cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private Igrac unosi;
+    @OneToMany(targetEntity = MjesanjeTriUnosa.class, cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Mjesanje> mjesanja = new ArrayList<>();
+    @ManyToMany (cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Igrac> igraci = new ArrayList<>();
 
 

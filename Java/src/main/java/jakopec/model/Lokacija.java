@@ -1,5 +1,10 @@
 package jakopec.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table (name = "lokacija")
 public class Lokacija  extends Entitet {
 
     private double longitude;

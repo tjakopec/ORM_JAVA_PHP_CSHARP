@@ -1,6 +1,13 @@
 package jakopec.model;
 
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@DiscriminatorValue("triUnosa")
 public class MjesanjeTriUnosa extends MjesanjeDvaUnosa {
+
 
     private int bodovaTreciUnos;
 

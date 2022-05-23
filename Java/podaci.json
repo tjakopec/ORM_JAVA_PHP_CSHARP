@@ -4,15 +4,13 @@
     "lokacija": {
       "longitude": 18.6098766,
       "latitude": 45.5605825,
-      "naziv": "Caffe Bar Peppermint",
-      "id": 1
+      "naziv": "Caffe Bar Peppermint"
     },
     "unosi": {
       "ime": "Tomislav",
       "prezime": "Jakopec",
       "urlSlika": "https://picsum.photos/200",
-      "spol": 1,
-      "id": 1
+      "spol": 1
     },
     "mjesanja": [
       {
@@ -22,8 +20,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.983Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.983Z"
       },
       {
         "bodovaPrviUnos": 152,
@@ -32,8 +29,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": true,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.983Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.983Z"
       }
     ],
     "igraci": [
@@ -41,33 +37,28 @@
         "ime": "Tomislav",
         "prezime": "Jakopec",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 1
+        "spol": 1
       },
       {
         "ime": "Marijan",
         "prezime": "Zidar",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 2
+        "spol": 1
       }
-    ],
-    "id": 0
+    ]
   },
   {
     "doKolikoSeIgra": 501,
     "lokacija": {
       "longitude": 18.6098766,
       "latitude": 45.5605825,
-      "naziv": "Caffe Bar Peppermint",
-      "id": 1
+      "naziv": "Caffe Bar Peppermint"
     },
     "unosi": {
       "ime": "Tomislav",
       "prezime": "Jakopec",
       "urlSlika": "https://picsum.photos/200",
-      "spol": 1,
-      "id": 1
+      "spol": 1
     },
     "mjesanja": [
       {
@@ -79,8 +70,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaTreciUnos": 76,
@@ -91,8 +81,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaTreciUnos": 76,
@@ -103,8 +92,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaTreciUnos": 76,
@@ -115,8 +103,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaTreciUnos": 76,
@@ -127,8 +114,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaTreciUnos": 76,
@@ -139,8 +125,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       }
     ],
     "igraci": [
@@ -148,40 +133,34 @@
         "ime": "Tomislav",
         "prezime": "Jakopec",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 1
+        "spol": 1
       },
       {
         "ime": "Marijan",
         "prezime": "Zidar",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 2
+        "spol": 1
       },
       {
         "ime": "Marija",
         "prezime": "Zimska",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 0,
-        "id": 3
+        "spol": 0
       }
-    ],
-    "id": 0
+    ]
   },
   {
     "doKolikoSeIgra": 501,
     "lokacija": {
       "longitude": 18.6098766,
       "latitude": 45.5605825,
-      "naziv": "Caffe Bar Peppermint",
-      "id": 1
+      "naziv": "Caffe Bar Peppermint"
     },
     "unosi": {
       "ime": "Tomislav",
       "prezime": "Jakopec",
       "urlSlika": "https://picsum.photos/200",
-      "spol": 1,
-      "id": 1
+      "spol": 1
     },
     "mjesanja": [
       {
@@ -191,8 +170,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": false,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       },
       {
         "bodovaPrviUnos": 152,
@@ -201,8 +179,7 @@
         "zvanjeDrugiUnos": 20,
         "stiglja": true,
         "belot": false,
-        "datumUnosa": "2020-02-23T18:11:30.984Z",
-        "id": 0
+        "datumUnosa": "2020-02-23T18:11:30.984Z"
       }
     ],
     "igraci": [
@@ -210,31 +187,26 @@
         "ime": "Tomislav",
         "prezime": "Jakopec",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 1
+        "spol": 1
       },
       {
         "ime": "Marijan",
         "prezime": "Zidar",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 1,
-        "id": 2
+        "spol": 1
       },
       {
         "ime": "Marija",
         "prezime": "Zimska",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 0,
-        "id": 3
+        "spol": 0
       },
       {
         "ime": "Anita",
         "prezime": "Račman",
         "urlSlika": "https://picsum.photos/200",
-        "spol": 0,
-        "id": 4
+        "spol": 0
       }
-    ],
-    "id": 0
+    ]
   }
 ]

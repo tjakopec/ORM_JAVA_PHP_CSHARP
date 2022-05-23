@@ -1,5 +1,10 @@
 package jakopec.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "igrac")
 public class Igrac extends Entitet {
 
     private String ime;
@@ -10,7 +15,7 @@ public class Igrac extends Entitet {
     public Igrac() {
     }
 
-    public Igrac(int sifra, String ime, String prezime, String urlSlika, int spol) {
+    public Igrac(Long sifra, String ime, String prezime, String urlSlika, int spol) {
         super(sifra);
         this.ime = ime;
         this.prezime = prezime;

@@ -1,13 +1,17 @@
 package jakopec;
 
+
 import jakopec.model.*;
+import jakopec.pomocno.HibernateUtil;
 import jakopec.pomocno.Json;
+import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Start {
 
+    private  Session s ;
     private List<Partija> partije;
     private Igrac igrac1;
     private Igrac igrac2;
@@ -16,31 +20,40 @@ public class Start {
     private Lokacija lokacija;
 
     public Start() {
-       // kreirajRucno();
-       //Json.toJsonFile("podaci.json",partije);
-
-       partije = Json.fromJsonFile("podaci.json");
-
-        for (Partija partija: partije ) {
+        s = HibernateUtil.getSession();
+        kreirajRucno();
+        // podaci iz JAVA objekata kreniranih ručno
+        for (Partija partija: partije) {
             System.out.println(partija);
         }
+        System.out.println("---------------");
+        List<Partija> partijeDvaIgraca = s.createQuery(
+                "from Partija",Partija.class).list();
+        for (Partija partija: partijeDvaIgraca) {
+            System.out.println(partija);
+        }
+
 
     }
 
 
-
     private void kreirajRucno(){
+        s.beginTransaction();
         partije = new ArrayList<>();
         igrac1 = kreirajIgraca1();
+        s.persist(igrac1);
         igrac2 = kreirajIgraca2();
-        igrac3 = new Igrac(3, "Marija", "Zimska", "https://picsum.photos/200", Spol.ZENSKO.getId());
-        igrac4 = new Igrac(4, "Anita", "Račman", "https://picsum.photos/200", Spol.ZENSKO.getId());
+        s.persist(igrac2);
+        igrac3 = new Igrac(null, "Marija", "Zimska", "https://picsum.photos/200", Spol.ZENSKO.getId());
+        s.persist(igrac3);
+        igrac4 = new Igrac(null, "Anita", "Račman", "https://picsum.photos/200", Spol.ZENSKO.getId());
+        s.persist(igrac4);
         lokacija = kreirajLokaciju();
-
+        s.persist(lokacija);
         kreirajPartijuDvaIgraca();
         kreirajPartijuTriIgraca();
         kreirajPartijuDvaPara();
-
+        s.getTransaction().commit();
 
     }
 
@@ -56,7 +69,7 @@ public class Start {
         igraci.add(igrac4);
         partija.setIgraci(igraci);
         partija.setMjesanja(kreirajMjesanjaDvaPara());
-
+        s.persist(partija);
         partije.add(partija);
     }
 
@@ -69,7 +82,7 @@ public class Start {
         m.setBodovaDrugiUnos(152);
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
-
+        s.persist(m);
         mjesanja.add(m);
 
 
@@ -81,7 +94,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setStiglja(true);
-
+        s.persist(m);
         mjesanja.add(m);
 
 
@@ -101,7 +114,7 @@ public class Start {
         igraci.add(igrac3);
         partija.setIgraci(igraci);
         partija.setMjesanja(kreirajMjesanjaTriIgraca());
-
+        s.persist(partija);
         partije.add(partija);
     }
 
@@ -114,6 +127,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setBodovaTreciUnos(76);
+        s.persist(m);
         mjesanja.add(m);
 
         for(int i=0;i<5;i++) {
@@ -123,6 +137,7 @@ public class Start {
             m.setZvanjePrviUnos(0);
             m.setZvanjeDrugiUnos(20);
             m.setBodovaTreciUnos(76);
+            s.persist(m);
             mjesanja.add(m);
         }
 
@@ -132,6 +147,7 @@ public class Start {
 
     private void kreirajPartijuDvaIgraca() {
         PartijaDvaIgraca partija = new PartijaDvaIgraca();
+
         partija.setDoKolikoSeIgra(501);
         partija.setLokacija(lokacija);
         partija.setUnosi(igrac1);
@@ -140,7 +156,7 @@ public class Start {
         igraci.add(igrac2);
         partija.setIgraci(igraci);
         partija.setMjesanja(kreirajMjesanjaDvaIgraca());
-
+        s.persist(partija);
         partije.add(partija);
     }
 
@@ -152,7 +168,7 @@ public class Start {
         m.setBodovaDrugiUnos(152);
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
-
+        s.persist(m);
         mjesanja.add(m);
 
         m = new MjesanjeDvaUnosa();
@@ -161,7 +177,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setStiglja(true);
-
+        s.persist(m);
         mjesanja.add(m);
 
         return mjesanja;
@@ -169,7 +185,6 @@ public class Start {
 
     private Lokacija kreirajLokaciju() {
         Lokacija l = new Lokacija();
-        l.setId(1);
         l.setNaziv("Caffe Bar Peppermint");
         l.setLatitude(45.5605825);
         l.setLongitude(18.6098766);
@@ -178,7 +193,6 @@ public class Start {
 
     private Igrac kreirajIgraca1() {
         Igrac i = new Igrac();
-        i.setId(1);
         i.setIme("Tomislav");
         i.setPrezime("Jakopec");
         i.setUrlSlika("https://picsum.photos/200");
@@ -188,7 +202,6 @@ public class Start {
 
     private Igrac kreirajIgraca2() {
         Igrac i = new Igrac();
-        i.setId(2);
         i.setIme("Marijan");
         i.setPrezime("Zidar");
         i.setUrlSlika("https://picsum.photos/200");

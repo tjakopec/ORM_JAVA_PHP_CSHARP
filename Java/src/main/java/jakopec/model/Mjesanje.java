@@ -1,7 +1,13 @@
 package jakopec.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "vrsta", discriminatorType = DiscriminatorType.STRING)
+@Table(name = "mjesanje")
 public abstract class Mjesanje extends Entitet {
 
     public abstract Rezulat getRezultat();
@@ -9,6 +15,7 @@ public abstract class Mjesanje extends Entitet {
     private boolean stiglja;
     private boolean belot;
     private Date datumUnosa = new Date();
+
 
     public boolean isBelot() {
         return belot;
@@ -33,6 +40,5 @@ public abstract class Mjesanje extends Entitet {
     public void setDatumUnosa(Date datumUnosa) {
         this.datumUnosa = datumUnosa;
     }
-
 
 }

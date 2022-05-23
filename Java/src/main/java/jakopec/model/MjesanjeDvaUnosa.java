@@ -1,5 +1,9 @@
 package jakopec.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@DiscriminatorValue("dvaUnosa")
 public class MjesanjeDvaUnosa extends Mjesanje {
 
     private int bodovaPrviUnos;
