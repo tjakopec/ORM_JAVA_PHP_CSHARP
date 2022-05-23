@@ -2,3 +2,4 @@ Java/.idea/
 Java/target/
 PHP/.idea/
 PHP/vendor/
+PHP/composer.lock
