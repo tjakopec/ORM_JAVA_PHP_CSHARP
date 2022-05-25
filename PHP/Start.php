@@ -17,10 +17,14 @@ class Start
      */
     public function __construct()
     {
+        require_once "bootstrap.php";
+
         // $e = new Entitet(); //Cannot instantiate abstract class 'Entitet'
         foreach ($this->getPartije() as $partija) {
+            $entityManager->persist($partija);
             echo  $partija  . "\n";
         }
+        $entityManager->flush();
         //print_r($this->getPartije());
     }
 
@@ -81,7 +85,7 @@ class Start
                 }
 
 
-                $mjesanje->setId($m->id);
+               $mjesanje->setId($m->id);
                 $mjesanje->setStiglja($m->stiglja);
                 $mjesanje->setBelot($m->belot);
                 $mjesanje->setDatumUnosa(new \DateTime($m->datumUnosa));

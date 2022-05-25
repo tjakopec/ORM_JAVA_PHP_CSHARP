@@ -31,21 +31,21 @@ abstract class Partija extends Entitet
     /** @Column(type="integer", name="dokolikoseigra") */
     private $doKolikoSeIgra;
     /**
-     * @ManyToOne(targetEntity="Lokacija", fetch="EXTRA_LAZY")
+     * @ManyToOne(targetEntity="Lokacija", fetch="EXTRA_LAZY", cascade={"persist", "remove"})
      * @JoinColumn(name="lokacija", referencedColumnName="id")
      */
     private $lokacija;
     /**
-     * @ManyToOne(targetEntity="Igrac", fetch="EAGER")
+     * @ManyToOne(targetEntity="Igrac", fetch="EAGER", cascade={"persist", "remove"})
      * @JoinColumn(name="unosi", referencedColumnName="id")
      */
     private $unosi;
     /**
-     * @OneToMany(targetEntity="Mjesanje", mappedBy="partija", fetch="EXTRA_LAZY")
+     * @OneToMany(targetEntity="Mjesanje", mappedBy="partija", fetch="EXTRA_LAZY", cascade={"persist", "remove"})
      */
     private $mjesanja;
     /**
-     * @ManyToMany(targetEntity="Igrac")
+     * @ManyToMany(targetEntity="Igrac", cascade={"persist", "remove"})
      * @JoinTable(name="partija_igrac", joinColumns={
      *          @JoinColumn(name="partija", referencedColumnName="id")
      *     },
