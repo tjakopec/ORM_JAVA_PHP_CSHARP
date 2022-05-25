@@ -17,6 +17,7 @@ use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * @Entity
@@ -27,23 +28,30 @@ use Doctrine\ORM\Mapping\Column;
  */
 abstract class Partija extends Entitet
 {
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="dokolikoseigra") */
     private $doKolikoSeIgra;
     /**
-     * @ManyToOne(targetEntity="Lokacija")
+     * @ManyToOne(targetEntity="Lokacija", fetch="EXTRA_LAZY")
+     * @JoinColumn(name="lokacija", referencedColumnName="id")
      */
     private $lokacija;
     /**
-     * @ManyToOne(targetEntity="Igrac")
+     * @ManyToOne(targetEntity="Igrac", fetch="EAGER")
+     * @JoinColumn(name="unosi", referencedColumnName="id")
      */
     private $unosi;
     /**
-     * @OneToMany(targetEntity="Mjesanje", mappedBy="partija")
+     * @OneToMany(targetEntity="Mjesanje", mappedBy="partija", fetch="EXTRA_LAZY")
      */
     private $mjesanja;
     /**
      * @ManyToMany(targetEntity="Igrac")
-     * @JoinTable(name="partija_igrac")
+     * @JoinTable(name="partija_igrac", joinColumns={
+     *          @JoinColumn(name="partija", referencedColumnName="id")
+     *     },
+     *     inverseJoinColumns={
+     *          @JoinColumn(name="igrac", referencedColumnName="id")
+     *     })
      */
     private $igraci;
 

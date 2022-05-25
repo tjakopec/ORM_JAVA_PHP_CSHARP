@@ -14,9 +14,9 @@ use Doctrine\ORM\Mapping\Column;
 class MjesanjeTriUnosa extends MjesanjeDvaUnosa
 {
 
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="bodovatreciunos") */
     private $bodovaTreciUnos;
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="zvanjetreciunos") */
     private $zvanjeTreciUnos;
 
     /**

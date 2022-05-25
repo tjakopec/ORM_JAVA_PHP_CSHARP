@@ -14,14 +14,14 @@ use Doctrine\ORM\Mapping\Column;
 class MjesanjeDvaUnosa extends Mjesanje
 {
 
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="bodovaprviunos") */
     private $bodovaPrviUnos;
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="bodovadrugiunos") */
     private $bodovaDrugiUnos;
 
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="zvanjeprviunos") */
     private $zvanjePrviUnos;
-    /** @Column(type="integer") */
+    /** @Column(type="integer", name="zvanjedrugiunos") */
     private $zvanjeDrugiUnos;
 
     /**

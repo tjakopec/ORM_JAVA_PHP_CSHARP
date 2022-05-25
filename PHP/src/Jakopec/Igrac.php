@@ -18,7 +18,7 @@ class Igrac extends Entitet
     private $ime;
     /** @Column(type="string") */
     private $prezime;
-    /** @Column(type="string") */
+    /** @Column(type="string", name="urlslika") */
     private $urlSlika;
     /** @Column(type="integer") */
     private $spol;

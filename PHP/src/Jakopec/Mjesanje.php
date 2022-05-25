@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping\DiscriminatorMap;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\Table;
 use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * @Entity
@@ -28,11 +29,12 @@ abstract class Mjesanje extends Entitet
     private $stiglja;
     /** @Column(type="boolean") */
     private $belot;
-    /** @Column(type="datetime") */
+    /** @Column(type="datetime", name="datumunosa") */
     private $datumUnosa;
 
     /**
      * @ManyToOne(targetEntity="PartijaTriIgraca")
+     * @JoinColumn(name="partija", referencedColumnName="id")
      */
     private $partija;
 
