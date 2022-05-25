@@ -3,13 +3,24 @@
 
 namespace Jakopec;
 
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Column;
 
+/**
+ * @Entity
+ * @Table(name="igrac")
+ */
 class Igrac extends Entitet
 {
 
+    /** @Column(type="string") */
     private $ime;
+    /** @Column(type="string") */
     private $prezime;
+    /** @Column(type="string") */
     private $urlSlika;
+    /** @Column(type="integer") */
     private $spol;
 
     /**

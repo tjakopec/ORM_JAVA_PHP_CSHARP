@@ -3,13 +3,48 @@
 
 namespace Jakopec;
 
+use Jakopec\Lokacija;
+use Jakopec\Igrac;
+use Jakopec\Mjesanje;
 
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\InheritanceType;
+use Doctrine\ORM\Mapping\DiscriminatorColumn;
+use Doctrine\ORM\Mapping\DiscriminatorMap;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Column;
+
+/**
+ * @Entity
+ * @InheritanceType( "SINGLE_TABLE" )
+ * @DiscriminatorColumn( name = "vrsta", type = "string" )
+ * @DiscriminatorMap({"dvaIgraca" = "PartijaDvaIgraca", "dvaPara" = "PartijaDvaPara", "triIgraca" = "PartijaTriIgraca"})
+ * @Table(name="partija")
+ */
 abstract class Partija extends Entitet
 {
+    /** @Column(type="integer") */
     private $doKolikoSeIgra;
+    /**
+     * @ManyToOne(targetEntity="Lokacija")
+     */
     private $lokacija;
+    /**
+     * @ManyToOne(targetEntity="Igrac")
+     */
     private $unosi;
+    /**
+     * @OneToMany(targetEntity="Mjesanje", mappedBy="partija")
+     */
     private $mjesanja;
+    /**
+     * @ManyToMany(targetEntity="Igrac")
+     * @JoinTable(name="partija_igrac")
+     */
     private $igraci;
 
     /**

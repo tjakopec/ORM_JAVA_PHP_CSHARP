@@ -5,11 +5,18 @@ namespace Jakopec;
 
 
 use Exception;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Column;
 
+/**
+ * @Entity
+ */
 class MjesanjeTriUnosa extends MjesanjeDvaUnosa
 {
 
+    /** @Column(type="integer") */
     private $bodovaTreciUnos;
+    /** @Column(type="integer") */
     private $zvanjeTreciUnos;
 
     /**

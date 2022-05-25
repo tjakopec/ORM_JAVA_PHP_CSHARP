@@ -3,7 +3,11 @@
 
 namespace Jakopec;
 
+use Doctrine\ORM\Mapping\Entity;
 
+/**
+ * @Entity
+ */
 class PartijaDvaPara extends Partija
 {
     public function __toString(): string

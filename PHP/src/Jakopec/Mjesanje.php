@@ -3,16 +3,38 @@
 
 namespace Jakopec;
 
-
+use Jakopec\PartijaTriIgraca;
 use DateTime as DateTime;
 use Exception;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\InheritanceType;
+use Doctrine\ORM\Mapping\DiscriminatorColumn;
+use Doctrine\ORM\Mapping\DiscriminatorMap;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Column;
 
+/**
+ * @Entity
+ * @InheritanceType( "SINGLE_TABLE" )
+ * @DiscriminatorColumn( name = "vrsta", type = "string" )
+ * @DiscriminatorMap({"dvaUnosa" = "MjesanjeDvaUnosa", "triUnosa" = "MjesanjeTriUnosa"})
+ * @Table(name="mjesanje")
+ */
 abstract class Mjesanje extends Entitet
 {
 
+    /** @Column(type="boolean") */
     private $stiglja;
+    /** @Column(type="boolean") */
     private $belot;
+    /** @Column(type="datetime") */
     private $datumUnosa;
+
+    /**
+     * @ManyToOne(targetEntity="PartijaTriIgraca")
+     */
+    private $partija;
 
     /**
      * Mjesanje constructor.
@@ -81,6 +103,22 @@ abstract class Mjesanje extends Entitet
     public function setDatumUnosa(DateTime $datumUnosa)
     {
         $this->datumUnosa = $datumUnosa;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPartija()
+    {
+        return $this->partija;
+    }
+
+    /**
+     * @param mixed $partija
+     */
+    public function setPartija($partija): void
+    {
+        $this->partija = $partija;
     }
 
 

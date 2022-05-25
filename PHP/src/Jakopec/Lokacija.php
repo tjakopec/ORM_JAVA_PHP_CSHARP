@@ -3,12 +3,23 @@
 
 namespace Jakopec;
 
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\Table;
+use Doctrine\ORM\Mapping\Column;
 
+
+/**
+ * @Entity
+ * @Table(name="lokacija")
+ */
 class Lokacija extends Entitet
 {
 
+    /** @Column(type="float") */
     private $longitude;
+    /** @Column(type="float") */
     private $latitude;
+    /** @Column(type="string") */
     private $naziv;
 
     /**

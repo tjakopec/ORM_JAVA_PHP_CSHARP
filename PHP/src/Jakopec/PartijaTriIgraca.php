@@ -3,7 +3,11 @@
 
 namespace Jakopec;
 
+use Doctrine\ORM\Mapping\Entity;
 
+/**
+ * @Entity
+ */
 class PartijaTriIgraca extends Partija
 {
 
