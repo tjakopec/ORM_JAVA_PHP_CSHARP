@@ -1,2 +1,26 @@
-﻿1. dotnet ef migrations add initial     - initial je naziv koji se mjenja
-2. dotnet ef database update
+﻿First you need to install dotnet-ef
+
+dotnet tool install --global dotnet-ef
+
+To install a specific version of the tool, use the following command:
+
+dotnet tool install --global dotnet-ef --version 3.1.4
+
+Add the "dotnet-ef" tools directory on the PATH environment variable.
+
+export PATH="$PATH:/Users/'your user folder'/.dotnet/tools"
+
+Open a command line, go to the project folder, and run
+
+dotnet restore
+
+If everything is fine, you should be able to run
+
+dotnet ef
+
+After that you can run commands like:
+
+dotnet ef migrations add initial
+
+dotnet ef database update
+

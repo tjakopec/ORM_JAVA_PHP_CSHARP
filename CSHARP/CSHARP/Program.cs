@@ -4,9 +4,9 @@ using CSHARP;
 
 
 var db = new ORMContext();
-if (db.Rezultati != null)
+if (db.Igraci != null)
 {
-    Console.WriteLine(value: db.Rezultati.Count());
+    Console.WriteLine(value: db.Igraci.Count());
 }
 else
 {

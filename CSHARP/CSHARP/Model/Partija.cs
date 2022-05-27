@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
+    [Table(name: "partija")]
     public abstract class Partija: Entitet
     {
 

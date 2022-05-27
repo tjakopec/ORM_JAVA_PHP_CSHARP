@@ -7,7 +7,10 @@ namespace CSHARP
 {
 	public class ORMContext : DbContext
 	{
-		public DbSet<Rezultat>? Rezultati { get; set; }
+		public DbSet<Igrac>? Igraci { get; set; }
+		public DbSet<Lokacija>? Lokacije { get; set; }
+		public DbSet<Mjesanje>? Mjesanja { get; set; }
+		public DbSet<Partija>? Partije { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{

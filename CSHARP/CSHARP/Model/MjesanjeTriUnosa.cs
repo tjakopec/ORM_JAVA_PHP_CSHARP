@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CSHARP.Model
 {
+    [Table(name: "mjesanje")]
     public class MjesanjeTriUnosa:MjesanjeDvaUnosa
     {
 
