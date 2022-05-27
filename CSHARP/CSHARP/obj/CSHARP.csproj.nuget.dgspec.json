@@ -14,7 +14,7 @@
         "outputPath": "/Applications/XAMPP/xamppfiles/htdocs/ORM_JAVA_PHP_CSHARP/CSHARP/CSHARP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tjakopec/.config/NuGet/NuGet.Config"
+          "/Users/tjakopec/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

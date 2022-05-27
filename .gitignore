@@ -3,3 +3,6 @@ Java/target/
 PHP/.idea/
 PHP/vendor/
 PHP/composer.lock
+CSHARP/CSHARP/bin/
+CSHARP/CSHARP/obj/
+CSHARP/.vs/
