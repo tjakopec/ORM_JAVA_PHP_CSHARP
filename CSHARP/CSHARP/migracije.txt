@@ -1,0 +1,2 @@
+﻿1. dotnet ef migrations add initial     - initial je naziv koji se mjenja
+2. dotnet ef database update

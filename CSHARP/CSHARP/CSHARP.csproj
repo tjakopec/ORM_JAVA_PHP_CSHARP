@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MySql.Data.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="EntityFramework" />
+    <None Remove="Pomelo.EntityFrameworkCore.MySql" />
+    <None Remove="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+</Project>
