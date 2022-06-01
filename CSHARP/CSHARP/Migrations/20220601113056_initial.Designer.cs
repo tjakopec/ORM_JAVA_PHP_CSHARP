@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSHARP.Migrations
 {
     [DbContext(typeof(ORMContext))]
-    [Migration("20220601111913_initial")]
+    [Migration("20220601113056_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,11 +37,12 @@ namespace CSHARP.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("urlSlika")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("urlslika");
 
                     b.HasKey("id");
 
-                    b.ToTable("Igraci");
+                    b.ToTable("igrac");
                 });
 
             modelBuilder.Entity("CSHARP.Model.Lokacija", b =>
@@ -61,7 +62,7 @@ namespace CSHARP.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Lokacije");
+                    b.ToTable("lokacija");
                 });
 
             modelBuilder.Entity("CSHARP.Model.Mjesanje", b =>
@@ -82,7 +83,7 @@ namespace CSHARP.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Mjesanja");
+                    b.ToTable("mjesanje");
 
                     b.HasDiscriminator<string>("vrsta").HasValue("Mjesanje");
                 });
@@ -94,7 +95,8 @@ namespace CSHARP.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("doKolikoSeIgra")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("dokolikoseigra");
 
                     b.Property<int>("lokacijaid")
                         .HasColumnType("int");
@@ -112,7 +114,7 @@ namespace CSHARP.Migrations
 
                     b.HasIndex("unosiid");
 
-                    b.ToTable("Partije");
+                    b.ToTable("partija");
 
                     b.HasDiscriminator<string>("vrsta").HasValue("Partija");
                 });
@@ -137,16 +139,22 @@ namespace CSHARP.Migrations
                     b.HasBaseType("CSHARP.Model.Mjesanje");
 
                     b.Property<int>("bodovaDrugiUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("bodovadrugiunos");
 
                     b.Property<int>("bodovaPrviUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("bodovaprviunos");
 
                     b.Property<int>("zvanjeDrugiUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("zvanjedrugiunos");
 
                     b.Property<int>("zvanjePrviUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("zvanjeprviunos");
+
+                    b.ToTable("mjesanje");
 
                     b.HasDiscriminator().HasValue("dvaUnosa");
                 });
@@ -155,6 +163,8 @@ namespace CSHARP.Migrations
                 {
                     b.HasBaseType("CSHARP.Model.Partija");
 
+                    b.ToTable("partija");
+
                     b.HasDiscriminator().HasValue("dvaIgraca");
                 });
 
@@ -162,12 +172,16 @@ namespace CSHARP.Migrations
                 {
                     b.HasBaseType("CSHARP.Model.Partija");
 
+                    b.ToTable("partija");
+
                     b.HasDiscriminator().HasValue("dvaPara");
                 });
 
             modelBuilder.Entity("CSHARP.Model.PartijaTriIgraca", b =>
                 {
                     b.HasBaseType("CSHARP.Model.Partija");
+
+                    b.ToTable("partija");
 
                     b.HasDiscriminator().HasValue("triIgraca");
                 });
@@ -180,12 +194,16 @@ namespace CSHARP.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("bodovaTreciUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("bodovatreciunos");
 
                     b.Property<int>("zvanjeTreciUnos")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("zvanjetreciunos");
 
                     b.HasIndex("Partijaid");
+
+                    b.ToTable("mjesanje");
 
                     b.HasDiscriminator().HasValue("triUnosa");
                 });

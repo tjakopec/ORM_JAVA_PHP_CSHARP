@@ -13,7 +13,7 @@ namespace CSHARP.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Igraci",
+                name: "igrac",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -22,18 +22,18 @@ namespace CSHARP.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     prezime = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    urlSlika = table.Column<string>(type: "longtext", nullable: true)
+                    urlslika = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     spol = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Igraci", x => x.id);
+                    table.PrimaryKey("PK_igrac", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Lokacije",
+                name: "lokacija",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -45,17 +45,17 @@ namespace CSHARP.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Lokacije", x => x.id);
+                    table.PrimaryKey("PK_lokacija", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Partije",
+                name: "partija",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    doKolikoSeIgra = table.Column<int>(type: "int", nullable: false),
+                    dokolikoseigra = table.Column<int>(type: "int", nullable: false),
                     lokacijaid = table.Column<int>(type: "int", nullable: false),
                     unosiid = table.Column<int>(type: "int", nullable: false),
                     vrsta = table.Column<string>(type: "longtext", nullable: false)
@@ -63,24 +63,24 @@ namespace CSHARP.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Partije", x => x.id);
+                    table.PrimaryKey("PK_partija", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Partije_Igraci_unosiid",
+                        name: "FK_partija_igrac_unosiid",
                         column: x => x.unosiid,
-                        principalTable: "Igraci",
+                        principalTable: "igrac",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Partije_Lokacije_lokacijaid",
+                        name: "FK_partija_lokacija_lokacijaid",
                         column: x => x.lokacijaid,
-                        principalTable: "Lokacije",
+                        principalTable: "lokacija",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Mjesanja",
+                name: "mjesanje",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -89,21 +89,21 @@ namespace CSHARP.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     stiglja = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     belot = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    bodovaPrviUnos = table.Column<int>(type: "int", nullable: true),
-                    bodovaDrugiUnos = table.Column<int>(type: "int", nullable: true),
-                    zvanjePrviUnos = table.Column<int>(type: "int", nullable: true),
-                    zvanjeDrugiUnos = table.Column<int>(type: "int", nullable: true),
-                    bodovaTreciUnos = table.Column<int>(type: "int", nullable: true),
-                    zvanjeTreciUnos = table.Column<int>(type: "int", nullable: true),
+                    bodovaprviunos = table.Column<int>(type: "int", nullable: true),
+                    bodovadrugiunos = table.Column<int>(type: "int", nullable: true),
+                    zvanjeprviunos = table.Column<int>(type: "int", nullable: true),
+                    zvanjedrugiunos = table.Column<int>(type: "int", nullable: true),
+                    bodovatreciunos = table.Column<int>(type: "int", nullable: true),
+                    zvanjetreciunos = table.Column<int>(type: "int", nullable: true),
                     Partijaid = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Mjesanja", x => x.id);
+                    table.PrimaryKey("PK_mjesanje", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Mjesanja_Partije_Partijaid",
+                        name: "FK_mjesanje_partija_Partijaid",
                         column: x => x.Partijaid,
-                        principalTable: "Partije",
+                        principalTable: "partija",
                         principalColumn: "id");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -119,57 +119,57 @@ namespace CSHARP.Migrations
                 {
                     table.PrimaryKey("PK_partija_igrac", x => new { x.igraciid, x.partijeid });
                     table.ForeignKey(
-                        name: "FK_partija_igrac_Igraci_igraciid",
+                        name: "FK_partija_igrac_igrac_igraciid",
                         column: x => x.igraciid,
-                        principalTable: "Igraci",
+                        principalTable: "igrac",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_partija_igrac_Partije_partijeid",
+                        name: "FK_partija_igrac_partija_partijeid",
                         column: x => x.partijeid,
-                        principalTable: "Partije",
+                        principalTable: "partija",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Mjesanja_Partijaid",
-                table: "Mjesanja",
+                name: "IX_mjesanje_Partijaid",
+                table: "mjesanje",
                 column: "Partijaid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_partija_lokacijaid",
+                table: "partija",
+                column: "lokacijaid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_partija_unosiid",
+                table: "partija",
+                column: "unosiid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_partija_igrac_partijeid",
                 table: "partija_igrac",
                 column: "partijeid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Partije_lokacijaid",
-                table: "Partije",
-                column: "lokacijaid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Partije_unosiid",
-                table: "Partije",
-                column: "unosiid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Mjesanja");
+                name: "mjesanje");
 
             migrationBuilder.DropTable(
                 name: "partija_igrac");
 
             migrationBuilder.DropTable(
-                name: "Partije");
+                name: "partija");
 
             migrationBuilder.DropTable(
-                name: "Igraci");
+                name: "igrac");
 
             migrationBuilder.DropTable(
-                name: "Lokacije");
+                name: "lokacija");
         }
     }
 }

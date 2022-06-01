@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
+    [Table("partija")]
     public abstract class Partija: Entitet
     {
 
-
+        [Column("dokolikoseigra")]
         public int doKolikoSeIgra { get; set; }
         public Lokacija lokacija { get; set; }
         public Igrac unosi { get; set; }

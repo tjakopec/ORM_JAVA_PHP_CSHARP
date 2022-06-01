@@ -1,11 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
     public class MjesanjeTriUnosa:MjesanjeDvaUnosa
     {
-
+        [Column("bodovatreciunos")]
         public int bodovaTreciUnos { get; set; }
+        [Column("zvanjetreciunos")]
         public int zvanjeTreciUnos { get; set; }
 
 

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
+    [Table("mjesanje")]
     public abstract class Mjesanje: Entitet
     {
         

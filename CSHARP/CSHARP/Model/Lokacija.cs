@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CSHARP.Model
 {
-
+    [Table("lokacija")]
     public class Lokacija:Entitet
     {
         public double longitude { get; set; }
