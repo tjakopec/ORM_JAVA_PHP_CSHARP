@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
-    [Table(name: "partija")]
     public abstract class Partija: Entitet
     {
 
@@ -12,7 +11,8 @@ namespace CSHARP.Model
         public int doKolikoSeIgra { get; set; }
         public Lokacija lokacija { get; set; }
         public Igrac unosi { get; set; }
-        public List<Mjesanje> mjesanja { get; set; }
+        public List<MjesanjeTriUnosa> mjesanja { get; set; }
+        [NotMapped]
         public List<Igrac> igraci { get; set; }
 
         public virtual Rezultat getRezultat()

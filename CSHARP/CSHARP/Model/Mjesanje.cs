@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSHARP.Model
 {
@@ -6,7 +7,7 @@ namespace CSHARP.Model
     {
         
         public abstract Rezultat getRezultat();
-
+        public string vrsta { get; set; }
         public bool stiglja { get; set; }
         public bool belot { get; set; }
     }

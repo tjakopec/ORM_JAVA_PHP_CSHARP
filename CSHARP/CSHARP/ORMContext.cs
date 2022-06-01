@@ -24,6 +24,38 @@ namespace CSHARP
 				.EnableDetailedErrors();
 
 		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+
+		
+			
+
+			modelBuilder.Entity<Mjesanje>()
+		.HasDiscriminator<string>("vrsta")
+		.HasValue<MjesanjeDvaUnosa>("dvaUnosa")
+		.HasValue<MjesanjeTriUnosa>("triUnosa");
+
+			
+			modelBuilder.Entity<Partija>()
+		.HasDiscriminator<string>("vrsta")
+		.HasValue<PartijaDvaIgraca>("dvaIgraca")
+		.HasValue<PartijaDvaPara>("dvaPara")
+		.HasValue<PartijaTriIgraca>("triIgraca");
+
+
+			modelBuilder
+				.Entity<PartijaTriIgraca>()
+				.HasMany(p => p.igraci)
+				.WithMany(p => p.partije)
+				.UsingEntity(j => j.ToTable("partija_igrac"));
+
+		}
+
+
+
+
+
 	}
 }
 

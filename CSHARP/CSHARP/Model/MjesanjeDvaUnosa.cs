@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CSHARP.Model
 {
     public class MjesanjeDvaUnosa:Mjesanje
