@@ -55,6 +55,10 @@ Dobar izvor za upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radioni
 
 ## Što je ORM?
 
+ORM ili objektno-relacijsko mapiranje  je sustav koji implementira odgovornost mapiranja objekta programskog jezika u relacijski model baze podataka. To znači da je odgovorno provoditi operacije unosa, promjene i brisanja podataka objektnog modela u relacijski model te čitati podatke iz relacijskog modela u objektni model.
+
+<img src="" />
+
 ## Motivacija za korištenje ORM-a
 
 
@@ -84,17 +88,7 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
 
 
 # Korišteni izvori
-* [Programming Bond: Object and Class]
-* [Encapsulation In Java,Real Time Example,Diagram | ProtechBeach]
-* [Using Accessors and Mutators in Java]
-* [Java Encapsulation Example]
-* [What is Encapsulation in Java - the WHAT, WHY and HOW]
-* [Inheritance and Polymorphism]
-* [Inheritance in Java – OOP Concept]
-* [Java Programming Tutorial OOP - Composition, Inheritance &amp; Polymorphism]
-* [Class Object]
-* [Java Polymorphism Example]
-* [Java Tutorials - OOP Concepts | Encapsulation | Abstraction | Inheritance | Polymorphism]
+* [ORM (Object Relational Mapping)]
 
 
 ** Sav korišten kôd, kako u primjerima tako i u razvojnim alatima je besplatan i dostupan u otvorenom pristupu. Stoga je i ovaj sadržaj besplatno dostupan u otvorenom pristupu  **
@@ -117,23 +111,11 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [techtarget.com DEFINITION object-oriented programming (OOP)]: <https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP>
    [OOP Java, PHP, Python, Swift]: <https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT>
 
+   [ORM (Object Relational Mapping)]: <https://javabydeveloper.com/orm-object-relational-mapping/>
    
    
    
    
-   [Programming Bond: Object and Class]: <http://programmingbond.blogspot.com/2014/06/object-and-class.html>
-   [Encapsulation In Java,Real Time Example,Diagram | ProtechBeach]: <https://www.protechbeach.com/java/encapsulation-in-java-with-real-time-example-with-diagram/>
-   [Using Accessors and Mutators in Java]: <https://www.thoughtco.com/accessors-and-mutators-2034335>
-   [Java Encapsulation Example]: <https://javatutorial.net/java-encapsulation-example>
-   [What is Encapsulation in Java - the WHAT, WHY and HOW]: <https://www.codejava.net/java-core/the-java-language/what-is-encapsulation-in-java-the-what-why-and-how>
-   [Inheritance and Polymorphism]: <https://cs.lmu.edu/~ray/notes/inheritance/>
-   [Inheritance in Java – OOP Concept]: <https://www.techbeamers.com/java-inheritance/>
-   [Java Programming Tutorial OOP - Composition, Inheritance &amp; Polymorphism]: <https://www3.ntu.edu.sg/home/ehchua/programming/java/J3b_OOPInheritancePolymorphism.html>
-   [Class Object]: <https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html>
-   [Java Polymorphism Example]: <https://javatutorial.net/java-polymorphism-example>
-   [Java Tutorials - OOP Concepts | Encapsulation | Abstraction | Inheritance | Polymorphism]: <http://www.btechsmartclass.com/java/java-oop-concepts.html>
-   [UML Class dijagram]: <https://medium.com/@smagid_allThings/uml-class-diagrams-tutorial-step-by-step-520fd83b300b>
-
 
 
    
