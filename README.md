@@ -114,8 +114,8 @@ Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u razli�
 * Projekt: [PHP]
 
 ## C#
-* Verzija programskog jezika: **7.4.3**
-* Razvojno okruženje (IDE): **PhpStorm**
+* Verzija programskog jezika: **10 (.NET 6.0.3)**
+* Razvojno okruženje (IDE): **Visual Studio**
 * Upravitelj zavisnosti (dependency manager): **NuGet**
 * ORM implementacja: **EntityFramework 6.4.4**
 * Baza podataka: **MariaDB** 
