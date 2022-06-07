@@ -1,10 +1,9 @@
 # Osnove objektno relacijskog mapiranja (ORM) u programskim jezicima  JAVA,  PHP i C#
 
-Predavanje održano u četvrtak 09. 06. 2022. 18:00 u Caffe Bar Peppermint.
 
 Predavanje daje uvod u relacijski model baza podataka, objektno orjentiranog programiranja te objektnog relacijskog mapiranja. Predavanje prikazuje implementaciju ORM-a u programskim jezicima Java, PHP i C#. Prikazuje se osnovno postavljanje, mapiranje entiteta te veza između entiteta (1:n, n:n) i CRUD operacije.
 
-Ovo neka bude početna točka za čitanje literature (na dnu stranice). 
+Ovo neka bude početna točka za daljnje istraživanje teme. 
 
 # Relacijski model baze podataka
 Definicije
@@ -38,18 +37,29 @@ Dobar izvor za upoznavanje s relacijskim bazama podataka su 2016 dale Ana Leh, D
 
 # Objetno orjentirano programiranje
 
+Definicija
+
+* "Objektno orijentirano programiranje (OOP) je model računalnog programiranja koji organizira dizajn programskih rješenja oko podataka ili objekata, a ne funkcija i logike." ([techtarget.com DEFINITION object-oriented programming (OOP)])
+
+OOP principi
+
+* Klasa/Objekt
+* Učahurivanje
+* Nasljeđivanje
+* Višeobličje (polimorfizam)
+
+Dobar izvor za upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radionice na temu [OOP Java, PHP, Python, Swift]. Kasnije su na isti repozitorij dodani jezici C# i Kotlin.
+
+
 # ORM
 
 ## Što je ORM?
 
-### Objekti/klase
+## Motivacija za korištenje ORM-a
 
-### Relacijska baza podataka
-
-## Zašto ORM?
 
 # Domena
-Bela blok, GIT link, OOP
+Bela blok
 
 # Implementacija u jezicima
 
@@ -104,6 +114,8 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [DBeaver]: <https://dbeaver.io/>
    [Uvod u MySQL prezentacija]: <https://prezi.com/cdotdlltlafc/uvod-u-mysql/>
    [Uvod u MySQL github repozitorij]: <https://github.com/tvilcek/OSC3MySQL>
+   [techtarget.com DEFINITION object-oriented programming (OOP)]: <https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP>
+   [OOP Java, PHP, Python, Swift]: <https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT>
 
    
    
