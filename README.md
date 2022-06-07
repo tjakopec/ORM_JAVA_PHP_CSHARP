@@ -55,7 +55,7 @@ Dobar izvor za upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radioni
 
 ## Što je ORM?
 
-ORM ili objektno-relacijsko mapiranje  je sustav koji implementira odgovornost mapiranja objekta programskog jezika u relacijski model baze podataka. To znači da je odgovorno provoditi operacije unosa, promjene i brisanja podataka objektnog modela u relacijski model te čitati podatke iz relacijskog modela u objektni model.
+ORM ili objektno-relacijsko mapiranje je sustav koji implementira odgovornost mapiranja objekta programskog jezika u relacijski model baze podataka. To znači da je odgovorno provoditi operacije unosa, promjene i brisanja podataka objektnog modela u relacijski model te čitati podatke iz relacijskog modela u objektni model.
 
 <img src="https://raw.githubusercontent.com/tjakopec/ORM_JAVA_PHP_CSHARP/main/orm_shema.svg" />
 *izvor slike: https://www.educative.io/edpresso/what-is-object-relational-mapping
@@ -93,25 +93,40 @@ ps.executeUpdate();
 
 Što da tablica ima još 10 atributa? Morali bi ručno još 10 naziva atributa, 10 ? (upitnika) i 10 ps.set... Ovo je samo primjer s insert. Isto je i s update, delete i select.
 
-
-
-
 # Implementacija u jezicima
 
-## Java (Hibernate)
+Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u različitim programskim jezicima. Kako je ORM sustav koji implementira odgovornost mapiranja u različitim programskim jezicima postoje različite implementacije ORM-a. Za svaki jezik je navedeno razvojno okruženje i korištena ORM implementacija.
 
-## PHP (Doctrine)
+## Java
+* Verzija programskog jezika: **11**
+* Razvojno okruženje (IDE): **IntelliJ IDEA**
+* Upravitelj zavisnosti (dependency manager): **Maven**
+* ORM implementacja: **Hibernate 6.0.1.Final**
+* Baza podataka: **MariaDB** 
+* Projekt: [Java]
 
-## C# (EntityFramework)
+## PHP
+* Verzija programskog jezika: **7.4.3**
+* Razvojno okruženje (IDE): **PhpStorm**
+* Upravitelj zavisnosti (dependency manager): **Composer**
+* ORM implementacja: **Doctrine ^2.11.0**
+* Baza podataka: **MariaDB** 
+* Projekt: [PHP]
+
+## C#
+* Verzija programskog jezika: **7.4.3**
+* Razvojno okruženje (IDE): **PhpStorm**
+* Upravitelj zavisnosti (dependency manager): **NuGet**
+* ORM implementacja: **EntityFramework 6.4.4**
+* Baza podataka: **MariaDB** 
+* Projekt: [CSHARP]
 
 # Fun facts
-* &gt; 20 commits
-* Trajanje pripreme materijala cca 5 sati.
-* Završio s izradom materijala u četvrtak, 27. 02. 2020 u 14:20
+* &gt; 30 commits
+* Trajanje pripreme materijala cca 10 sati.
+* Završio s izradom materijala u četvrtak, 09. 06. 2022 u 14:20
 <img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/Priprema.jpeg?raw=true">
-* Na predavanju bilo >50 polaznika
-<img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/predavanje1.jpg?raw=true">
-<img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/predavanje2.jpg?raw=true">
+
 
 # Predavač
 Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozofskom fakultetu Osijek. Voditelj je Dvopredmetnog diplomskog studija informacijske tehnologije. Nositelj je kolegija vezanih uz informacijske tehnologije u društvenom području. Kao vanjski suradnik izvodi nastavu na Stručnom studiju informacijskih tehnologija na Odjelu za informacijske znanosti pri Sveučilištu u Zadru na kolegiju Razvoj mobilnih aplikacija. Veliki je zaljubljenik u informacijske tehnologije općenito.
@@ -146,6 +161,9 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [techtarget.com DEFINITION object-oriented programming (OOP)]: <https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP>
    [OOP Java, PHP, Python, Swift]: <https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT>
    [sql skriptu]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/belot.sql>
+   [Java]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/Java>
+   [PHP]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/PHP>
+   [CSHARP]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/CSHARP>
    
    [ORM (Object Relational Mapping)]: <https://javabydeveloper.com/orm-object-relational-mapping/>
    [What is Object Relational Mapping?]: <https://www.educative.io/edpresso/what-is-object-relational-mapping>
