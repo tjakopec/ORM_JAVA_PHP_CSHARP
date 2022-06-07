@@ -61,10 +61,17 @@ ORM ili objektno-relacijsko mapiranje  je sustav koji implementira odgovornost m
 *izvor slike: https://www.educative.io/edpresso/what-is-object-relational-mapping
 
 ## Motivacija za korištenje ORM-a
+U dijelu baza podataka želimo imati tablice koje su uredno složene i povezane parovima primarni i vanjski (strani ključ). Iz tog razloga pišemo sql skriptu. Skriptu možemo pisati koristeći SQL 92 standard i raditi će u većini RDBMS a u svima ostalima uz sitne izmjene.
+
+<img src="https://raw.githubusercontent.com/tjakopec/ORM_JAVA_PHP_CSHARP/main/orm_java.png" />
+
+S druge strane svakako u OOP jeziku po izboru želimo definirati klase i odnose između klasa kako bi lakše razvijali programsko rješenje.
+
+<img src="https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON/blob/master/Java/classDiagram1.png?raw=true" />
+
+Gdje nastaje problem? 
 
 
-# Domena
-Bela blok
 
 # Implementacija u jezicima
 
