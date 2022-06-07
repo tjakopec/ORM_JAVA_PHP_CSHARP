@@ -5,7 +5,7 @@ Predavanje daje uvod u relacijski model baza podataka, objektno orjentiranog pro
 
 Ovo neka bude početna točka za daljnje istraživanje teme. 
 
-# Relacijski model baze podataka
+# Relacijski model baza podataka
 Definicije
 
 * "Relacijske baze podataka su vrsta baze podataka koja pohranjuje i organizira podatkovne točke s definiranim odnosima za brzi pristup." ([azure.microsoft.com What is a relational database?])
@@ -35,7 +35,7 @@ Dobar izvor za upoznavanje s relacijskim bazama podataka su 2016 dale Ana Leh, D
 * [Uvod u MySQL prezentacija]
 * [Uvod u MySQL github repozitorij]
 
-# Objetno orjentirano programiranje
+# Objektno orijentirano programiranje
 
 Definicija
 
@@ -61,7 +61,7 @@ ORM ili objektno-relacijsko mapiranje  je sustav koji implementira odgovornost m
 *izvor slike: https://www.educative.io/edpresso/what-is-object-relational-mapping
 
 ## Motivacija za korištenje ORM-a
-U dijelu baza podataka želimo imati tablice koje su uredno složene i povezane parovima primarni i vanjski (strani ključ). Iz tog razloga pišemo sql skriptu. Skriptu možemo pisati koristeći SQL 92 standard i raditi će u većini RDBMS a u svima ostalima uz sitne izmjene.
+U dijelu baza podataka želimo imati tablice koje su uredno složene i povezane parovima primarni i vanjski (strani ključ). Iz tog razloga pišemo [sql skriptu]. Skriptu možemo pisati koristeći SQL 92 standard i raditi će u većini RDBMS a u svima ostalima uz sitne izmjene.
 
 <img src="https://raw.githubusercontent.com/tjakopec/ORM_JAVA_PHP_CSHARP/main/orm_java.png" />
 
@@ -69,7 +69,30 @@ S druge strane svakako u OOP jeziku po izboru želimo definirati klase i odnose 
 
 <img src="https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON/blob/master/Java/classDiagram1.png?raw=true" />
 
-Gdje nastaje problem? 
+Gdje nastaje problem? Ima li uopće problema? Idemo pogledati kako bi izgledao java kod za unos podataka u tablicu mjesanje
+
+<pre>
+<code>
+PreparedStatement ps = veza.prepareStatement("insert into mjesanje " +
+"(vrsta, belot, datumunosa, stiglja, bodovadrugiunos, bodovaprviunos, " +
+"zvanjeprviunos, bodovatreciunos, zvanjetreciunos, partija) " +
+"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+ps.setString(1,"triUnosa");
+ps.setBoolean(2,mjesanje.isBelot());
+ps.setDate(3, new java.sql.Date(mjesanje.getDatumUnosa().getTime()));
+ps.setBoolean(4,mjesanje.isStiglja());
+ps.setInt(5,mjesanje.getBodovaDrugiUnos());
+ps.setInt(6,mjesanje.getBodovaPrviUnos());
+ps.setInt(7,mjesanje.getZvanjePrviUnos());
+ps.setInt(8,mjesanje.getBodovaTreciUnos());
+ps.setInt(9,mjesanje.getZvanjeTreciUnos());
+ps.setLong(10,mjesanje.getPartija().getId());
+ps.executeUpdate();
+</code>
+</pre>
+
+Što da tablica ima još 10 atributa? Morali bi ručno još 10 naziva atributa, 10 ? (upitnika) i 10 ps.set... Ovo je samo primjer s insert. Isto je i s update, delete i select.
+
 
 
 
@@ -122,7 +145,8 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [Uvod u MySQL github repozitorij]: <https://github.com/tvilcek/OSC3MySQL>
    [techtarget.com DEFINITION object-oriented programming (OOP)]: <https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP>
    [OOP Java, PHP, Python, Swift]: <https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT>
-
+   [sql skriptu]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/belot.sql>
+   
    [ORM (Object Relational Mapping)]: <https://javabydeveloper.com/orm-object-relational-mapping/>
    [What is Object Relational Mapping?]: <https://www.educative.io/edpresso/what-is-object-relational-mapping>
    [A brief history of Object Relational Mapping]: <https://antoniogoncalves.org/2008/09/27/a-brief-history-of-object-relational-mapping/>
