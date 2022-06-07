@@ -57,7 +57,8 @@ Dobar izvor za upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radioni
 
 ORM ili objektno-relacijsko mapiranje  je sustav koji implementira odgovornost mapiranja objekta programskog jezika u relacijski model baze podataka. To znači da je odgovorno provoditi operacije unosa, promjene i brisanja podataka objektnog modela u relacijski model te čitati podatke iz relacijskog modela u objektni model.
 
-<img src="" />
+<img src="https://raw.githubusercontent.com/tjakopec/ORM_JAVA_PHP_CSHARP/main/orm_shema.svg" />
+*izvor slike: https://www.educative.io/edpresso/what-is-object-relational-mapping
 
 ## Motivacija za korištenje ORM-a
 
@@ -89,6 +90,10 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
 
 # Korišteni izvori
 * [ORM (Object Relational Mapping)]
+* [What is Object Relational Mapping?]
+* [A brief history of Object Relational Mapping]
+* [The Rise and Fall of Object Relational Mapping]
+* [What is an ORM and Why You Should Use it]
 
 
 ** Sav korišten kôd, kako u primjerima tako i u razvojnim alatima je besplatan i dostupan u otvorenom pristupu. Stoga je i ovaj sadržaj besplatno dostupan u otvorenom pristupu  **
@@ -112,6 +117,11 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [OOP Java, PHP, Python, Swift]: <https://github.com/tjakopec/OOP_JAVA_PHP_PYTHON_SWIFT>
 
    [ORM (Object Relational Mapping)]: <https://javabydeveloper.com/orm-object-relational-mapping/>
+   [What is Object Relational Mapping?]: <https://www.educative.io/edpresso/what-is-object-relational-mapping>
+   [A brief history of Object Relational Mapping]: <https://antoniogoncalves.org/2008/09/27/a-brief-history-of-object-relational-mapping/>
+   [The Rise and Fall of Object Relational Mapping]: <https://maetl.net/talks/rise-and-fall-of-orm>
+   [What is an ORM and Why You Should Use it]: <https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a>
+   
    
    
    
