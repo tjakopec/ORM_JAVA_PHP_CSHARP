@@ -111,7 +111,7 @@ Svi primjeri su odrađeni prema principu Code first koji predviđa mapiranje kla
 * Verzija programskog jezika: **7.4.3**
 * Razvojno okruženje (IDE): **PhpStorm**
 * Upravitelj zavisnosti (dependency manager): **Composer**
-* ORM implementacja: **Doctrine 2.11.0**
+* ORM implementacja: **Doctrine 2.12.2**
 * Baza podataka: **MariaDB** 
 * Projekt: [PHP]
 

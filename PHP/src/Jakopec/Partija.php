@@ -108,7 +108,7 @@ abstract class Partija extends Entitet
     /**
      * @return array
      */
-    public function getIgraci(): array
+    public function getIgraci()
     {
         return $this->igraci;
     }
@@ -116,7 +116,7 @@ abstract class Partija extends Entitet
     /**
      * @param array $igraci
      */
-    public function setIgraci(array $igraci)
+    public function setIgraci($igraci)
     {
         $this->igraci = $igraci;
     }
@@ -189,7 +189,7 @@ abstract class Partija extends Entitet
     /**
      * @return array
      */
-    public function getMjesanja(): array
+    public function getMjesanja()
     {
         return $this->mjesanja;
     }
@@ -197,7 +197,7 @@ abstract class Partija extends Entitet
     /**
      * @param array $mjesanja
      */
-    public function setMjesanja(array $mjesanja)
+    public function setMjesanja($mjesanja)
     {
         $this->mjesanja = $mjesanja;
     }

@@ -33,7 +33,7 @@ abstract class Mjesanje extends Entitet
     private $datumUnosa;
 
     /**
-     * @ManyToOne(targetEntity="PartijaTriIgraca")
+     * @ManyToOne(targetEntity="Partija")
      * @JoinColumn(name="partija", referencedColumnName="id")
      */
     private $partija;
