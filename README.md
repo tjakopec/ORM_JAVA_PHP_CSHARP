@@ -48,7 +48,7 @@ OOP principi
 * Nasljeđivanje
 * Višeobličje (polimorfizam)
 
-Dobar izvor za upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radionice na temu [OOP Java, PHP, Python, Swift]. Kasnije su na isti repozitorij dodani jezici C# i Kotlin.
+Upoznavanje s OOP sam odradio 2020 u sklopu OSC Code Camp radionice na temu [OOP Java, PHP, Python, Swift]. Kasnije su na isti repozitorij dodani jezici C# i Kotlin.
 
 
 # ORM
