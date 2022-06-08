@@ -17,7 +17,7 @@ public abstract class Mjesanje extends Entitet {
     @Column(name = "datumunosa")
     private Date datumUnosa = new Date();
 
-    @ManyToOne(targetEntity = PartijaTriIgraca.class, cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = PartijaTriIgraca.class, fetch = FetchType.LAZY)
     @JoinColumn(name="partija")
     private Partija partija;
 

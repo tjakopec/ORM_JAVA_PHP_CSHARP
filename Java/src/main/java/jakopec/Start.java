@@ -20,23 +20,50 @@ public class Start {
 
     public Start() {
         s = HibernateUtil.getSession();
-        kreirajRucno();
+        //insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
+        //select();
+        //update();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
+        delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
+
+
+
+
+    }
+
+    private void select(){
         // podaci iz JAVA objekata kreniranih ručno
         for (Partija partija: partije) {
             System.out.println(partija);
         }
         // Podaci iz baze
-        List<Partija> partijeDvaIgraca = s.createQuery(
+        List<Partija> partije = s.createQuery(
                 "from Partija",Partija.class).list();
-        for (Partija partija: partijeDvaIgraca) {
+        for (Partija partija: partije) {
             System.out.println(partija);
         }
+    }
+
+    private void update(){
+        List<Partija> partije = s.createQuery("from Partija", Partija.class).list();
+        var mjesanje = partije.get(0).getMjesanja().get(0);
+        mjesanje.setBelot(true);
+        s.beginTransaction();
+        s.persist(mjesanje);
+        s.getTransaction().commit();
 
 
     }
 
+    private void delete(){
+        List<Partija> partije = s.createQuery("from Partija", Partija.class).list();
+        var mjesanje = partije.get(0).getMjesanja().get(0);
+        s.beginTransaction();
+        s.remove(mjesanje);
+        s.getTransaction().commit();
+    }
 
-    private void kreirajRucno(){
+
+    private void insert(){
         s.beginTransaction();
         partije = new ArrayList<>();
         igrac1 = kreirajIgraca1();
@@ -67,12 +94,12 @@ public class Start {
         igraci.add(igrac3);
         igraci.add(igrac4);
         partija.setIgraci(igraci);
-        partija.setMjesanja(kreirajMjesanjaDvaPara());
+        partija.setMjesanja(kreirajMjesanjaDvaPara(partija));
         s.persist(partija);
         partije.add(partija);
     }
 
-    private List<Mjesanje> kreirajMjesanjaDvaPara() {
+    private List<Mjesanje> kreirajMjesanjaDvaPara(Partija p) {
 
         List<Mjesanje> mjesanja = new ArrayList<>();
 
@@ -81,6 +108,7 @@ public class Start {
         m.setBodovaDrugiUnos(152);
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
+        m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
 
@@ -93,6 +121,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setStiglja(true);
+        m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
 
@@ -112,12 +141,12 @@ public class Start {
         igraci.add(igrac2);
         igraci.add(igrac3);
         partija.setIgraci(igraci);
-        partija.setMjesanja(kreirajMjesanjaTriIgraca());
+        partija.setMjesanja(kreirajMjesanjaTriIgraca(partija));
         s.persist(partija);
         partije.add(partija);
     }
 
-    private List<Mjesanje> kreirajMjesanjaTriIgraca() {
+    private List<Mjesanje> kreirajMjesanjaTriIgraca(Partija p) {
         List<Mjesanje> mjesanja = new ArrayList<>();
 
         MjesanjeTriUnosa m = new MjesanjeTriUnosa();
@@ -126,6 +155,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setBodovaTreciUnos(76);
+        m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
 
@@ -136,6 +166,7 @@ public class Start {
             m.setZvanjePrviUnos(0);
             m.setZvanjeDrugiUnos(20);
             m.setBodovaTreciUnos(76);
+            m.setPartija(p);
             s.persist(m);
             mjesanja.add(m);
         }
@@ -154,12 +185,12 @@ public class Start {
         igraci.add(igrac1);
         igraci.add(igrac2);
         partija.setIgraci(igraci);
-        partija.setMjesanja(kreirajMjesanjaDvaIgraca());
+        partija.setMjesanja(kreirajMjesanjaDvaIgraca(partija));
         s.persist(partija);
         partije.add(partija);
     }
 
-    private List<Mjesanje> kreirajMjesanjaDvaIgraca() {
+    private List<Mjesanje> kreirajMjesanjaDvaIgraca(Partija p) {
         List<Mjesanje> mjesanja = new ArrayList<>();
 
         MjesanjeDvaUnosa m = new MjesanjeDvaUnosa();
@@ -167,6 +198,7 @@ public class Start {
         m.setBodovaDrugiUnos(152);
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
+        m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
 
@@ -176,6 +208,7 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setStiglja(true);
+        m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
 

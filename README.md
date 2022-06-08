@@ -97,6 +97,8 @@ ps.executeUpdate();
 
 Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u različitim programskim jezicima. Kako je ORM sustav koji implementira odgovornost mapiranja u različitim programskim jezicima postoje različite implementacije ORM-a. Za svaki jezik je navedeno razvojno okruženje i korištena ORM implementacija.
 
+Svi primjeri su odrađeni prema principu Code first koji predviđa mapiranje klasa te kreiranje sheme baze prema definiranom mapiranju.
+
 ## Java
 * Verzija programskog jezika: **11**
 * Razvojno okruženje (IDE): **IntelliJ IDEA**
@@ -109,7 +111,7 @@ Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u razli�
 * Verzija programskog jezika: **7.4.3**
 * Razvojno okruženje (IDE): **PhpStorm**
 * Upravitelj zavisnosti (dependency manager): **Composer**
-* ORM implementacja: **Doctrine ^2.11.0**
+* ORM implementacja: **Doctrine 2.11.0**
 * Baza podataka: **MariaDB** 
 * Projekt: [PHP]
 
@@ -129,7 +131,7 @@ Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u razli�
 
 
 # Predavač
-Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozofskom fakultetu Osijek. Voditelj je Dvopredmetnog diplomskog studija informacijske tehnologije. Nositelj je kolegija vezanih uz informacijske tehnologije u društvenom području. Kao vanjski suradnik izvodi nastavu na Stručnom studiju informacijskih tehnologija na Odjelu za informacijske znanosti pri Sveučilištu u Zadru na kolegiju Razvoj mobilnih aplikacija. Veliki je zaljubljenik u informacijske tehnologije općenito.
+Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozofskom fakultetu Osijek. Voditelj je Dvopredmetnog diplomskog studija informacijske tehnologije. Nositelj je kolegija vezanih uz informacijske tehnologije u društvenom području. Kao vanjski suradnik izvodi nastavu na Stručnom studiju informacijskih tehnologija na Odjelu za informacijske znanosti pri Sveučilištu u Zadru na kolegiju Razvoj mobilnih aplikacija te na Ekonomskom fakultetu u Osijeku na kolegiju Razvoj poslovnih aplikacija. Veliki je zaljubljenik u informacijske tehnologije općenito.
 
 
 
@@ -139,6 +141,10 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
 * [A brief history of Object Relational Mapping]
 * [The Rise and Fall of Object Relational Mapping]
 * [What is an ORM and Why You Should Use it]
+* [What is Object/Relational Mapping?]
+* [Getting Started with Doctrine]
+* [Hibernate ORM 6.0.2.Final User Guide]
+* [What is Entity Framework?]
 
 
 ** Sav korišten kôd, kako u primjerima tako i u razvojnim alatima je besplatan i dostupan u otvorenom pristupu. Stoga je i ovaj sadržaj besplatno dostupan u otvorenom pristupu  **
@@ -170,6 +176,10 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [A brief history of Object Relational Mapping]: <https://antoniogoncalves.org/2008/09/27/a-brief-history-of-object-relational-mapping/>
    [The Rise and Fall of Object Relational Mapping]: <https://maetl.net/talks/rise-and-fall-of-orm>
    [What is an ORM and Why You Should Use it]: <https://blog.bitsrc.io/what-is-an-orm-and-why-you-should-use-it-b2b6f75f5e2a>
+   [Getting Started with Doctrine]: <https://www.doctrine-project.org/projects/doctrine-orm/en/2.11/tutorials/getting-started.html>
+   [What is Object/Relational Mapping?]: <https://hibernate.org/orm/what-is-an-orm/>
+   [Hibernate ORM 6.0.2.Final User Guide]: <https://docs.jboss.org/hibernate/orm/6.0/userguide/html_single/Hibernate_User_Guide.html>
+   [What is Entity Framework?]: <https://www.entityframeworktutorial.net/what-is-entityframework.aspx>
    
    
    
