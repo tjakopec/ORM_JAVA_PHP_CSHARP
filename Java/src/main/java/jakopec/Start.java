@@ -20,14 +20,10 @@ public class Start {
 
     public Start() {
         s = HibernateUtil.getSession();
-        //insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
+        insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
         //select();
         //update();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
         //delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
-
-
-
-
     }
 
     private void select(){
@@ -50,8 +46,6 @@ public class Start {
         s.beginTransaction();
         s.persist(mjesanje);
         s.getTransaction().commit();
-
-
     }
 
     private void delete(){
@@ -61,7 +55,6 @@ public class Start {
         s.remove(mjesanje);
         s.getTransaction().commit();
     }
-
 
     private void insert(){
         s.beginTransaction();
@@ -80,12 +73,10 @@ public class Start {
         kreirajPartijuTriIgraca();
         kreirajPartijuDvaPara();
         s.getTransaction().commit();
-
     }
 
     private void kreirajPartijuDvaIgraca() {
         PartijaDvaIgraca partija = new PartijaDvaIgraca();
-
         partija.setDoKolikoSeIgra(501);
         partija.setLokacija(lokacija);
         partija.setUnosi(igrac1);
@@ -100,7 +91,6 @@ public class Start {
 
     private List<Mjesanje> kreirajMjesanjaDvaIgraca(Partija p) {
         List<Mjesanje> mjesanja = new ArrayList<>();
-
         MjesanjeDvaUnosa m = new MjesanjeDvaUnosa();
         m.setBodovaPrviUnos(10);
         m.setBodovaDrugiUnos(152);
@@ -109,7 +99,6 @@ public class Start {
         m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
-
         m = new MjesanjeDvaUnosa();
         m.setBodovaPrviUnos(152);
         m.setBodovaDrugiUnos(10);
@@ -119,7 +108,6 @@ public class Start {
         m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
-
         return mjesanja;
     }
 
@@ -141,7 +129,6 @@ public class Start {
 
     private List<Mjesanje> kreirajMjesanjaTriIgraca(Partija p) {
         List<Mjesanje> mjesanja = new ArrayList<>();
-
         MjesanjeTriUnosa m = new MjesanjeTriUnosa();
         m.setBodovaPrviUnos(10);
         m.setBodovaDrugiUnos(76);
@@ -149,11 +136,9 @@ public class Start {
         m.setZvanjePrviUnos(0);
         m.setZvanjeDrugiUnos(20);
         m.setZvanjeTreciUnos(0);
-
         m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
-
         for(int i=0;i<5;i++) {
             m = new MjesanjeTriUnosa();
             m.setBodovaPrviUnos(10);
@@ -166,8 +151,6 @@ public class Start {
             s.persist(m);
             mjesanja.add(m);
         }
-
-
         return mjesanja;
     }
 
@@ -188,9 +171,7 @@ public class Start {
     }
 
     private List<Mjesanje> kreirajMjesanjaDvaPara(Partija p) {
-
         List<Mjesanje> mjesanja = new ArrayList<>();
-
         MjesanjeDvaUnosa m = new MjesanjeDvaUnosa();
         m.setBodovaPrviUnos(10);
         m.setBodovaDrugiUnos(152);
@@ -199,10 +180,6 @@ public class Start {
         m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
-
-
-
-
         m = new MjesanjeDvaUnosa();
         m.setBodovaPrviUnos(152);
         m.setBodovaDrugiUnos(10);
@@ -212,15 +189,9 @@ public class Start {
         m.setPartija(p);
         s.persist(m);
         mjesanja.add(m);
-
-
-
         return mjesanja;
 
     }
-
-
-
 
     private Lokacija kreirajLokaciju() {
         Lokacija l = new Lokacija();
@@ -247,7 +218,6 @@ public class Start {
         i.setSpol(Spol.MUSKO.getId());
         return i;
     }
-
 
     public static void main(String[] args) {
         new Start();

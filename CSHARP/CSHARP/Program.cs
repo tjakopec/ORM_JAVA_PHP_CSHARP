@@ -21,7 +21,7 @@ namespace CSHARP
         public Program()
         {
             db = new ORMContext();
-            //insert();
+            insert();
             //select();
             //update();
             //delete();
@@ -165,8 +165,6 @@ namespace CSHARP
         }
 
 
-
-
         private void kreirajPartijuDvaPara()
         {
             var p = new PartijaDvaPara();
@@ -203,9 +201,6 @@ namespace CSHARP
 
             return mjesanja;
         }
-
-       
-
 
 
         private Igrac kreirajIgraca(string ime, string prezime)
