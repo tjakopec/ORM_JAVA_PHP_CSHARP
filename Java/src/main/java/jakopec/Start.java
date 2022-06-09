@@ -21,7 +21,7 @@ public class Start {
     public Start() {
         s = HibernateUtil.getSession();
         insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
-        //select();
+        select();
         //update();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
         //delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
     }
@@ -31,6 +31,7 @@ public class Start {
         for (Partija partija: partije) {
             System.out.println(partija);
         }
+
         // Podaci iz baze
         List<Partija> partije = s.createQuery(
                 "from Partija",Partija.class).list();

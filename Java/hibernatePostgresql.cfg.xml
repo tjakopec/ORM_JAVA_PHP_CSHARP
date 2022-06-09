@@ -6,12 +6,10 @@
     <session-factory>
 
         <!--
-        Kreirati bazu
-            grant all privileges on orm_java.* to 'orm'@'localhost' identified by 'orm';
-            create database orm_java character set utf8mb4 collate utf8mb4_general_ci;
+        na MAC-u odlična aplikacija https://postgresapp.com/
          -->
 
-        <property name="connection.url">jdbc:postgresql://localhost:5432/orm_java</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/orm_java?createDatabaseIfNotExist=true</property>
         <property name="connection.username">tjakopec</property>
         <property name="connection.password"></property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
