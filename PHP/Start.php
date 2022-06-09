@@ -28,13 +28,23 @@ class Start
 
         $this->defineDoctrine();
 
-        $this->partije = [];
-        $this->ucitajPartije();
-        $this->insert();
+        //$this->partije = [];
+        //$this->ucitajPartije();
+        //$this->insert();
 
-        $this->select();
+        //$this->select();
+        //$this->update();
+        //$this->delete();
+    }
 
 
+
+    private function insert()
+    {
+        foreach ($this->partije as $partija) {
+            $this->entityManager->persist($partija);
+        }
+        $this->entityManager->flush();
     }
 
     private function select()
@@ -46,11 +56,21 @@ class Start
         }
     }
 
-    private function insert()
+    private function update()
     {
-        foreach ($this->partije as $partija) {
-            $this->entityManager->persist($partija);
-        }
+        $dql = $this->entityManager->createQuery('SELECT m FROM Jakopec\Mjesanje m');
+        $mjesanja = $dql->getResult();
+        $mjesanja[0]->setStiglja(true);
+        $this->entityManager->persist($mjesanja[0]);
+        $this->entityManager->flush();
+    }
+
+    private function delete()
+    {
+        $dql = $this->entityManager->createQuery('SELECT m FROM Jakopec\Mjesanje m');
+        $mjesanja = $dql->getResult();
+        $mjesanja[0]->setStiglja(true);
+        $this->entityManager->remove($mjesanja[0]);
         $this->entityManager->flush();
     }
 

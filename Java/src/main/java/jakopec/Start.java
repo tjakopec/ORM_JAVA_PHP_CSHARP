@@ -20,8 +20,8 @@ public class Start {
 
     public Start() {
         s = HibernateUtil.getSession();
-        insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
-        select();
+        //insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
+        //select();
         //update();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
         //delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
 

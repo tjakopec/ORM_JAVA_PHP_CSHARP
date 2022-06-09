@@ -24,7 +24,7 @@ namespace CSHARP
             //insert();
             //select();
             //update();
-            delete();
+            //delete();
         }
 
         private void insert()
