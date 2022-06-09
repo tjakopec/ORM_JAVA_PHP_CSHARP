@@ -95,7 +95,10 @@ ps.executeUpdate();
 
 # Implementacija u jezicima
 
+<img src="https://raw.githubusercontent.com/tjakopec/ORM_JAVA_PHP_CSHARP/main/belablok.png" />
 Isti primjer (vođenje rezultata u kartaškoj igri Belot) je realiziran u različitim programskim jezicima. Kako je ORM sustav koji implementira odgovornost mapiranja u različitim programskim jezicima postoje različite implementacije ORM-a. Za svaki jezik je navedeno razvojno okruženje i korištena ORM implementacija.
+
+Bela blok aplikciju možete preuzeti na [App Store] ili [Google Play].
 
 Svi primjeri su odrađeni prema principu Code first koji predviđa mapiranje klasa te kreiranje sheme baze prema definiranom mapiranju.
 
@@ -170,6 +173,8 @@ Tomislav Jakopec radi kao docent na Odsjeku za informacijske znanosti pri Filozo
    [Java]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/Java>
    [PHP]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/PHP>
    [CSHARP]: <https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/tree/main/CSHARP>
+   [App Store]:<https://apps.apple.com/hr/app/bela-blok/id463442397?l=hr>
+   [Google Play]:<https://play.google.com/store/apps/details?id=hr.jakopec.belablok&hl=en_US&gl=US>
    
    [ORM (Object Relational Mapping)]: <https://javabydeveloper.com/orm-object-relational-mapping/>
    [What is Object Relational Mapping?]: <https://www.educative.io/edpresso/what-is-object-relational-mapping>
