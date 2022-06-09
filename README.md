@@ -110,6 +110,12 @@ Svi primjeri su odrađeni prema principu Code first koji predviđa mapiranje kla
 * Baza podataka: **MariaDB** 
 * Projekt: [Java]
 
+Rezultat ORM select iz baze
+
+Partija DVA IGRAČA, igra gotova: NE, Tomislav Jakopec: 162 | Marijan Zidar: 202<br />
+Partija TRI IGRAČA, igra gotova: DA, Tomislav Jakopec: 60 | Marijan Zidar: 576 | Marija Zimska: 456<br />
+Partija DVA PARA, igra gotova: NE, Tomislav Jakopec i Marijan Zidar: 162 | Marija Zimska i Anita Račman: 202
+
 ## PHP
 * Verzija programskog jezika: **7.4.3**
 * Razvojno okruženje (IDE): **PhpStorm**
@@ -118,13 +124,23 @@ Svi primjeri su odrađeni prema principu Code first koji predviđa mapiranje kla
 * Baza podataka: **MariaDB** 
 * Projekt: [PHP]
 
-## C#
+Rezultat ORM select iz baze
+
+Partija DVA IGRAČA, igra gotova: NE, Tomislav Jakopec: 162 | Marijan Zidar: 202<br />
+Partija TRI IGRAČA, igra gotova: DA, Tomislav Jakopec: 60 | Marijan Zidar: 576 | Marija Zimska: 456<br />
+Partija DVA PARA, igra gotova: NE, Tomislav Jakopec i Marijan Zidar: 162 | Marija Zimska i Anita Račman: 202
+
+## C\# 
 * Verzija programskog jezika: **10 (.NET 6.0.3)**
 * Razvojno okruženje (IDE): **Visual Studio**
 * Upravitelj zavisnosti (dependency manager): **NuGet**
 * ORM implementacja: **EntityFramework 6.4.4**
 * Baza podataka: **MariaDB** 
 * Projekt: [CSHARP]
+
+Rezultat ORM select iz baze
+
+Ne radi mi jer nije pokupio povezane podatke. POMOĆ!!
 
 # Fun facts
 * &gt; 30 commits
