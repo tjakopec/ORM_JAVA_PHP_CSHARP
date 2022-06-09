@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using CSHARP.Model;
 using Newtonsoft.Json;
@@ -9,24 +10,52 @@ namespace CSHARP
     class Program
     {
 
-        private List<Partija>? partije;
+        private List<Partija> partije;
         private Igrac igrac1;
         private Igrac igrac2;
         private Igrac igrac3;
         private Igrac igrac4;
         private Lokacija lokacija;
+        private ORMContext db;
 
         public Program()
         {
-            kreirajRucno();
-            var db = new ORMContext();
-            
+            db = new ORMContext();
+            //insert();
+            //select();
+            //update();
+            delete();
+        }
 
+        private void insert()
+        {
+            kreirajRucno();
             foreach (Partija p in partije)
             {
-                Console.WriteLine(p.igraci.Count);
                 db.Partije.Add(p);
             }
+            db.SaveChanges();
+        }
+
+        private void select()
+        {
+            // ne učitava mi liste iako koristim Include - POMOĆ
+            foreach (Partija p in db.Partije.Include(p => p.mjesanja).ToList())
+            {
+                Console.WriteLine(p.doKolikoSeIgra);
+                //Console.WriteLine(p);
+            }
+        }
+
+        private void update()
+        {
+            db.Mjesanja.First().stiglja = true;
+            db.SaveChanges();
+        }
+
+        private void delete()
+        {
+            db.Mjesanja.Remove(db.Mjesanja.First());
             db.SaveChanges();
         }
 
@@ -46,6 +75,9 @@ namespace CSHARP
                 prezime = "Račman"
             };
             lokacija = new Lokacija();
+            lokacija.naziv = "Caffe Bar Peppermint";
+            lokacija.longitude = 18.6098766;
+            lokacija.latitude = 45.5605825;
 
             kreirajPartijuDvaIgraca();
             kreirajPartijuTriIgraca();

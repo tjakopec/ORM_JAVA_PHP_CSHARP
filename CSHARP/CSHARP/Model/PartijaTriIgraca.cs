@@ -18,7 +18,7 @@ namespace CSHARP.Model
         public override string ToString()
         {
             var r = getRezultat();
-            return "Partija TRI IGRAČA, igra gotova: " + isIgraGotova() + ", " + igraci[0] +
+            return "Partija TRI IGRAČA, igra gotova: " + (isIgraGotova() ? "DA" : "NE") + ", " + igraci[0] +
                 " : " +
                     r.prvi +
                     " | " + igraci[1] +" : " + r.drugi +
