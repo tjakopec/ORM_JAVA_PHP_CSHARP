@@ -89,13 +89,13 @@ namespace CSHARP.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     stiglja = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     belot = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Partijaid = table.Column<int>(type: "int", nullable: true),
                     bodovaprviunos = table.Column<int>(type: "int", nullable: true),
                     bodovadrugiunos = table.Column<int>(type: "int", nullable: true),
                     zvanjeprviunos = table.Column<int>(type: "int", nullable: true),
                     zvanjedrugiunos = table.Column<int>(type: "int", nullable: true),
                     bodovatreciunos = table.Column<int>(type: "int", nullable: true),
-                    zvanjetreciunos = table.Column<int>(type: "int", nullable: true),
-                    Partijaid = table.Column<int>(type: "int", nullable: true)
+                    zvanjetreciunos = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

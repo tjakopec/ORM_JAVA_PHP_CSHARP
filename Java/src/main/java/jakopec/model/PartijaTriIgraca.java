@@ -11,7 +11,7 @@ public class PartijaTriIgraca extends PartijaDvaIgraca {
     @Override
     public String toString() {
         Rezulat rezulat = getRezultat();
-        return "Partija TRI IGRAČA, igra gotova: " + isIgraGotova() + ", " +
+        return "Partija TRI IGRAČA, igra gotova: " + (isIgraGotova() ? "DA" : "NE") + ", " +
                 getIgraci().get(0) + ": " + rezulat.getPrvi() +" | "+
                 getIgraci().get(1) + ": " + rezulat.getDrugi() + " | "+
                 getIgraci().get(2) + ": " + rezulat.getTreci();

@@ -24,7 +24,7 @@ namespace CSHARP
 
             foreach (Partija p in partije)
             {
-                Console.WriteLine(p);
+                Console.WriteLine(p.igraci.Count);
                 db.Partije.Add(p);
             }
             db.SaveChanges();
@@ -62,8 +62,30 @@ namespace CSHARP
             p.igraci = new List<Igrac>();
             p.igraci.Add(igrac1);
             p.igraci.Add(igrac2);
-            p.mjesanja = kreirajMjesanjaDvaPara();
+            p.mjesanja = kreirajMjesanjaDvaIgraca();
             partije.Add(p);
+        }
+
+        private List<Mjesanje> kreirajMjesanjaDvaIgraca()
+        {
+            var mjesanja = new List<Mjesanje>();
+            mjesanja.Add(new MjesanjeDvaUnosa()
+            {
+                bodovaPrviUnos = 10,
+                bodovaDrugiUnos = 152,
+                zvanjePrviUnos = 0,
+                zvanjeDrugiUnos = 20
+            });
+
+            mjesanja.Add(new MjesanjeDvaUnosa()
+            {
+                bodovaPrviUnos = 152,
+                bodovaDrugiUnos = 10,
+                zvanjePrviUnos = 0,
+                zvanjeDrugiUnos = 20
+            });
+
+            return mjesanja;
         }
 
         private void kreirajPartijuTriIgraca()
@@ -79,6 +101,37 @@ namespace CSHARP
             p.mjesanja = kreirajMjesanjaTriIgraca();
             partije.Add(p);
         }
+
+        private List<Mjesanje> kreirajMjesanjaTriIgraca()
+        {
+            var mjesanja = new List<Mjesanje>();
+            mjesanja.Add(new MjesanjeTriUnosa()
+            {
+                bodovaPrviUnos = 10,
+                bodovaDrugiUnos = 76,
+                bodovaTreciUnos = 76,
+                zvanjePrviUnos = 0,
+                zvanjeDrugiUnos = 20,
+                zvanjeTreciUnos=0                
+            });
+
+            for (int i = 0; i < 5; i++)
+            {
+                mjesanja.Add(new MjesanjeTriUnosa()
+                {
+                    bodovaPrviUnos = 10,
+                    bodovaDrugiUnos = 76,
+                    bodovaTreciUnos = 76,
+                    zvanjePrviUnos = 0,
+                    zvanjeDrugiUnos = 20,
+                    zvanjeTreciUnos = 0
+                });
+            }
+
+
+            return mjesanja;
+        }
+
 
 
 
@@ -97,10 +150,10 @@ namespace CSHARP
             partije.Add(p);
         }
 
-        private List<MjesanjeTriUnosa> kreirajMjesanjaDvaPara()
+        private List<Mjesanje> kreirajMjesanjaDvaPara()
         {
-            var mjesanja = new List<MjesanjeTriUnosa>();
-            mjesanja.Add(new MjesanjeTriUnosa()
+            var mjesanja = new List<Mjesanje>();
+            mjesanja.Add(new MjesanjeDvaUnosa()
             {
                 bodovaPrviUnos = 10,
                 bodovaDrugiUnos = 152,
@@ -108,7 +161,7 @@ namespace CSHARP
                 zvanjeDrugiUnos = 20
             });
 
-            mjesanja.Add(new MjesanjeTriUnosa()
+            mjesanja.Add(new MjesanjeDvaUnosa()
             {
                 bodovaPrviUnos = 152,
                 bodovaDrugiUnos = 10,
@@ -119,34 +172,7 @@ namespace CSHARP
             return mjesanja;
         }
 
-        private List<MjesanjeTriUnosa> kreirajMjesanjaTriIgraca()
-        {
-            var mjesanja = new List<MjesanjeTriUnosa>();
-            mjesanja.Add(new MjesanjeTriUnosa()
-            {
-                bodovaPrviUnos = 10,
-                bodovaDrugiUnos = 76,
-                zvanjePrviUnos = 0,
-                zvanjeDrugiUnos = 20,
-                bodovaTreciUnos = 76
-            });
-
-            for (int i = 0; i < 5; i++)
-            {
-                mjesanja.Add(new MjesanjeTriUnosa()
-                {
-                    bodovaPrviUnos = 10,
-                    bodovaDrugiUnos = 76,
-                    zvanjePrviUnos = 0,
-                    zvanjeDrugiUnos = 20,
-                    bodovaTreciUnos = 76
-                });
-            }
-
-
-            return mjesanja;
-        }
-
+       
 
 
 

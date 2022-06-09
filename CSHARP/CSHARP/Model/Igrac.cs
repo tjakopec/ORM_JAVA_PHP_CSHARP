@@ -11,7 +11,7 @@ namespace CSHARP.Model
         public string? urlSlika { get; set; }
         public int spol { get; set; }
         [NotMapped]
-        public virtual ICollection<PartijaTriIgraca> partije { get; set; }
+        public virtual ICollection<Partija> partije { get; set; }
 
         public override string ToString()
         {

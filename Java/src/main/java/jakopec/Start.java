@@ -20,10 +20,10 @@ public class Start {
 
     public Start() {
         s = HibernateUtil.getSession();
-        //insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
-        //select();
+        insert(); // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na create
+        select();
         //update();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
-        delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
+        //delete();  // prije izvođenja u hibernate.cfg.xml svojstvo hbm2ddl.auto postaviti na update
 
 
 
@@ -83,6 +83,94 @@ public class Start {
 
     }
 
+    private void kreirajPartijuDvaIgraca() {
+        PartijaDvaIgraca partija = new PartijaDvaIgraca();
+
+        partija.setDoKolikoSeIgra(501);
+        partija.setLokacija(lokacija);
+        partija.setUnosi(igrac1);
+        List<Igrac> igraci = new ArrayList<>();
+        igraci.add(igrac1);
+        igraci.add(igrac2);
+        partija.setIgraci(igraci);
+        partija.setMjesanja(kreirajMjesanjaDvaIgraca(partija));
+        s.persist(partija);
+        partije.add(partija);
+    }
+
+    private List<Mjesanje> kreirajMjesanjaDvaIgraca(Partija p) {
+        List<Mjesanje> mjesanja = new ArrayList<>();
+
+        MjesanjeDvaUnosa m = new MjesanjeDvaUnosa();
+        m.setBodovaPrviUnos(10);
+        m.setBodovaDrugiUnos(152);
+        m.setZvanjePrviUnos(0);
+        m.setZvanjeDrugiUnos(20);
+        m.setPartija(p);
+        s.persist(m);
+        mjesanja.add(m);
+
+        m = new MjesanjeDvaUnosa();
+        m.setBodovaPrviUnos(152);
+        m.setBodovaDrugiUnos(10);
+        m.setZvanjePrviUnos(0);
+        m.setZvanjeDrugiUnos(20);
+        m.setStiglja(true);
+        m.setPartija(p);
+        s.persist(m);
+        mjesanja.add(m);
+
+        return mjesanja;
+    }
+
+
+    private void kreirajPartijuTriIgraca() {
+        PartijaTriIgraca partija = new PartijaTriIgraca();
+        partija.setDoKolikoSeIgra(501);
+        partija.setLokacija(lokacija);
+        partija.setUnosi(igrac1);
+        List<Igrac> igraci = new ArrayList<>();
+        igraci.add(igrac1);
+        igraci.add(igrac2);
+        igraci.add(igrac3);
+        partija.setIgraci(igraci);
+        partija.setMjesanja(kreirajMjesanjaTriIgraca(partija));
+        s.persist(partija);
+        partije.add(partija);
+    }
+
+    private List<Mjesanje> kreirajMjesanjaTriIgraca(Partija p) {
+        List<Mjesanje> mjesanja = new ArrayList<>();
+
+        MjesanjeTriUnosa m = new MjesanjeTriUnosa();
+        m.setBodovaPrviUnos(10);
+        m.setBodovaDrugiUnos(76);
+        m.setBodovaTreciUnos(76);
+        m.setZvanjePrviUnos(0);
+        m.setZvanjeDrugiUnos(20);
+        m.setZvanjeTreciUnos(0);
+
+        m.setPartija(p);
+        s.persist(m);
+        mjesanja.add(m);
+
+        for(int i=0;i<5;i++) {
+            m = new MjesanjeTriUnosa();
+            m.setBodovaPrviUnos(10);
+            m.setBodovaDrugiUnos(76);
+            m.setBodovaTreciUnos(76);
+            m.setZvanjePrviUnos(0);
+            m.setZvanjeDrugiUnos(20);
+            m.setZvanjeTreciUnos(0);
+            m.setPartija(p);
+            s.persist(m);
+            mjesanja.add(m);
+        }
+
+
+        return mjesanja;
+    }
+
     private void kreirajPartijuDvaPara() {
         PartijaDvaPara partija = new PartijaDvaPara();
         partija.setDoKolikoSeIgra(501);
@@ -131,89 +219,8 @@ public class Start {
 
     }
 
-    private void kreirajPartijuTriIgraca() {
-        PartijaTriIgraca partija = new PartijaTriIgraca();
-        partija.setDoKolikoSeIgra(501);
-        partija.setLokacija(lokacija);
-        partija.setUnosi(igrac1);
-        List<Igrac> igraci = new ArrayList<>();
-        igraci.add(igrac1);
-        igraci.add(igrac2);
-        igraci.add(igrac3);
-        partija.setIgraci(igraci);
-        partija.setMjesanja(kreirajMjesanjaTriIgraca(partija));
-        s.persist(partija);
-        partije.add(partija);
-    }
-
-    private List<Mjesanje> kreirajMjesanjaTriIgraca(Partija p) {
-        List<Mjesanje> mjesanja = new ArrayList<>();
-
-        MjesanjeTriUnosa m = new MjesanjeTriUnosa();
-        m.setBodovaPrviUnos(10);
-        m.setBodovaDrugiUnos(76);
-        m.setZvanjePrviUnos(0);
-        m.setZvanjeDrugiUnos(20);
-        m.setBodovaTreciUnos(76);
-        m.setPartija(p);
-        s.persist(m);
-        mjesanja.add(m);
-
-        for(int i=0;i<5;i++) {
-            m = new MjesanjeTriUnosa();
-            m.setBodovaPrviUnos(10);
-            m.setBodovaDrugiUnos(76);
-            m.setZvanjePrviUnos(0);
-            m.setZvanjeDrugiUnos(20);
-            m.setBodovaTreciUnos(76);
-            m.setPartija(p);
-            s.persist(m);
-            mjesanja.add(m);
-        }
 
 
-        return mjesanja;
-    }
-
-    private void kreirajPartijuDvaIgraca() {
-        PartijaDvaIgraca partija = new PartijaDvaIgraca();
-
-        partija.setDoKolikoSeIgra(501);
-        partija.setLokacija(lokacija);
-        partija.setUnosi(igrac1);
-        List<Igrac> igraci = new ArrayList<>();
-        igraci.add(igrac1);
-        igraci.add(igrac2);
-        partija.setIgraci(igraci);
-        partija.setMjesanja(kreirajMjesanjaDvaIgraca(partija));
-        s.persist(partija);
-        partije.add(partija);
-    }
-
-    private List<Mjesanje> kreirajMjesanjaDvaIgraca(Partija p) {
-        List<Mjesanje> mjesanja = new ArrayList<>();
-
-        MjesanjeDvaUnosa m = new MjesanjeDvaUnosa();
-        m.setBodovaPrviUnos(10);
-        m.setBodovaDrugiUnos(152);
-        m.setZvanjePrviUnos(0);
-        m.setZvanjeDrugiUnos(20);
-        m.setPartija(p);
-        s.persist(m);
-        mjesanja.add(m);
-
-        m = new MjesanjeDvaUnosa();
-        m.setBodovaPrviUnos(152);
-        m.setBodovaDrugiUnos(10);
-        m.setZvanjePrviUnos(0);
-        m.setZvanjeDrugiUnos(20);
-        m.setStiglja(true);
-        m.setPartija(p);
-        s.persist(m);
-        mjesanja.add(m);
-
-        return mjesanja;
-    }
 
     private Lokacija kreirajLokaciju() {
         Lokacija l = new Lokacija();

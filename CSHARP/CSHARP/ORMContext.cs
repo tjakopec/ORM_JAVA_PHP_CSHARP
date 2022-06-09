@@ -45,7 +45,7 @@ namespace CSHARP
 
 
 			modelBuilder
-				.Entity<PartijaTriIgraca>()
+				.Entity<Partija>()
 				.HasMany(p => p.igraci)
 				.WithMany(p => p.partije)
 				.UsingEntity(j => j.ToTable("partija_igrac"));

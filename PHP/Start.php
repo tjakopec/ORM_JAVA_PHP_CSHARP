@@ -19,6 +19,7 @@ class Start
     private $igrac3;
     private $igrac4;
     private $partije;
+
     /**
      * Start constructor.
      */
@@ -26,11 +27,12 @@ class Start
     {
 
         $this->defineDoctrine();
-        //$this->partije=[];
-        //$this->ucitajPartije();
-        //$this->insert();
-        $this->select();
 
+        $this->partije = [];
+        $this->ucitajPartije();
+        $this->insert();
+
+        $this->select();
 
 
     }
@@ -95,23 +97,31 @@ class Start
         $p->setLokacija($this->lokacija);
         $p->setUnosi($this->igrac1);
         $igraci = [];
-        $igraci[]=$this->igrac1;
-        $igraci[]=$this->igrac2;
+        $igraci[] = $this->igrac1;
+        $igraci[] = $this->igrac2;
         $p->setIgraci($igraci);
         $mjesanja = [];
-        for($i=0;$i<2;$i++){
-            $m = new MjesanjeDvaUnosa();
-            $m->setPartija($p);
-            $m->setBodovaPrviUnos(10);
-            $m->setZvanjePrviUnos(0);
-            $m->setBodovaDrugiUnos(152);
-            $m->setZvanjeDrugiUnos(20);
-            $mjesanja[]=$m;
-        }
+
+        $m = new MjesanjeDvaUnosa();
+        $m->setPartija($p);
+        $m->setBodovaPrviUnos(10);
+        $m->setBodovaDrugiUnos(152);
+        $m->setZvanjePrviUnos(0);
+        $m->setZvanjeDrugiUnos(20);
+        $mjesanja[] = $m;
+
+        $m = new MjesanjeDvaUnosa();
+        $m->setPartija($p);
+        $m->setBodovaPrviUnos(152);
+        $m->setBodovaDrugiUnos(10);
+        $m->setZvanjePrviUnos(0);
+        $m->setZvanjeDrugiUnos(20);
+        $mjesanja[] = $m;
+
 
         $p->setMjesanja($mjesanja);
         $this->entityManager->persist($p);
-        $this->partije[]=$p;
+        $this->partije[] = $p;
     }
 
     private function kreirajPartijuTriIgraca()
@@ -121,25 +131,38 @@ class Start
         $p->setLokacija($this->lokacija);
         $p->setUnosi($this->igrac1);
         $igraci = [];
-        $igraci[]=$this->igrac1;
-        $igraci[]=$this->igrac2;
-        $igraci[]=$this->igrac3;
+        $igraci[] = $this->igrac1;
+        $igraci[] = $this->igrac2;
+        $igraci[] = $this->igrac3;
         $p->setIgraci($igraci);
         $mjesanja = [];
-        for($i=0;$i<6;$i++){
+
+        $m = new MjesanjeTriUnosa();
+        $m->setPartija($p);
+        $m->setBodovaPrviUnos(10);
+        $m->setBodovaDrugiUnos(76);
+        $m->setBodovaTreciUnos(76);
+        $m->setZvanjePrviUnos(0);
+        $m->setZvanjeDrugiUnos(20);
+        $m->setZvanjeTreciUnos(0);
+
+        $mjesanja[] = $m;
+
+        for ($i = 0; $i < 5; $i++) {
             $m = new MjesanjeTriUnosa();
             $m->setPartija($p);
             $m->setBodovaPrviUnos(10);
-            $m->setZvanjePrviUnos(0);
-            $m->setBodovaDrugiUnos(40);
-            $m->setZvanjeDrugiUnos(20);
+            $m->setBodovaDrugiUnos(76);
             $m->setBodovaTreciUnos(76);
-            $mjesanja[]=$m;
+            $m->setZvanjePrviUnos(0);
+            $m->setZvanjeDrugiUnos(20);
+            $m->setZvanjeTreciUnos(0);
+            $mjesanja[] = $m;
         }
 
         $p->setMjesanja($mjesanja);
         $this->entityManager->persist($p);
-        $this->partije[]=$p;
+        $this->partije[] = $p;
     }
 
     private function kreirajPartijuDvaPara()
@@ -149,25 +172,33 @@ class Start
         $p->setLokacija($this->lokacija);
         $p->setUnosi($this->igrac1);
         $igraci = [];
-        $igraci[]=$this->igrac1;
-        $igraci[]=$this->igrac2;
-        $igraci[]=$this->igrac3;
-        $igraci[]=$this->igrac4;
+        $igraci[] = $this->igrac1;
+        $igraci[] = $this->igrac2;
+        $igraci[] = $this->igrac3;
+        $igraci[] = $this->igrac4;
         $p->setIgraci($igraci);
         $mjesanja = [];
-        for($i=0;$i<2;$i++){
-            $m = new MjesanjeDvaUnosa();
-            $m->setPartija($p);
-            $m->setBodovaPrviUnos(10);
-            $m->setZvanjePrviUnos(0);
-            $m->setBodovaDrugiUnos(152);
-            $m->setZvanjeDrugiUnos(20);
-            $mjesanja[]=$m;
-        }
+
+        $m = new MjesanjeDvaUnosa();
+        $m->setPartija($p);
+        $m->setBodovaPrviUnos(10);
+        $m->setBodovaDrugiUnos(152);
+        $m->setZvanjePrviUnos(0);
+        $m->setZvanjeDrugiUnos(20);
+        $mjesanja[] = $m;
+
+        $m = new MjesanjeDvaUnosa();
+        $m->setPartija($p);
+        $m->setBodovaPrviUnos(152);
+        $m->setBodovaDrugiUnos(10);
+        $m->setZvanjePrviUnos(0);
+        $m->setZvanjeDrugiUnos(20);
+        $mjesanja[] = $m;
+
 
         $p->setMjesanja($mjesanja);
         $this->entityManager->persist($p);
-        $this->partije[]=$p;
+        $this->partije[] = $p;
     }
 
     // ovo je inače u bootstrap.php

@@ -69,6 +69,9 @@ namespace CSHARP.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Partijaid")
+                        .HasColumnType("int");
+
                     b.Property<bool>("belot")
                         .HasColumnType("tinyint(1)");
 
@@ -80,6 +83,8 @@ namespace CSHARP.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("id");
+
+                    b.HasIndex("Partijaid");
 
                     b.ToTable("mjesanje");
 
@@ -117,7 +122,7 @@ namespace CSHARP.Migrations
                     b.HasDiscriminator<string>("vrsta").HasValue("Partija");
                 });
 
-            modelBuilder.Entity("IgracPartijaTriIgraca", b =>
+            modelBuilder.Entity("IgracPartija", b =>
                 {
                     b.Property<int>("igraciid")
                         .HasColumnType("int");
@@ -188,9 +193,6 @@ namespace CSHARP.Migrations
                 {
                     b.HasBaseType("CSHARP.Model.MjesanjeDvaUnosa");
 
-                    b.Property<int?>("Partijaid")
-                        .HasColumnType("int");
-
                     b.Property<int>("bodovaTreciUnos")
                         .HasColumnType("int")
                         .HasColumnName("bodovatreciunos");
@@ -199,11 +201,16 @@ namespace CSHARP.Migrations
                         .HasColumnType("int")
                         .HasColumnName("zvanjetreciunos");
 
-                    b.HasIndex("Partijaid");
-
                     b.ToTable("mjesanje");
 
                     b.HasDiscriminator().HasValue("triUnosa");
+                });
+
+            modelBuilder.Entity("CSHARP.Model.Mjesanje", b =>
+                {
+                    b.HasOne("CSHARP.Model.Partija", null)
+                        .WithMany("mjesanja")
+                        .HasForeignKey("Partijaid");
                 });
 
             modelBuilder.Entity("CSHARP.Model.Partija", b =>
@@ -225,7 +232,7 @@ namespace CSHARP.Migrations
                     b.Navigation("unosi");
                 });
 
-            modelBuilder.Entity("IgracPartijaTriIgraca", b =>
+            modelBuilder.Entity("IgracPartija", b =>
                 {
                     b.HasOne("CSHARP.Model.Igrac", null)
                         .WithMany()
@@ -233,18 +240,11 @@ namespace CSHARP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CSHARP.Model.PartijaTriIgraca", null)
+                    b.HasOne("CSHARP.Model.Partija", null)
                         .WithMany()
                         .HasForeignKey("partijeid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("CSHARP.Model.MjesanjeTriUnosa", b =>
-                {
-                    b.HasOne("CSHARP.Model.Partija", null)
-                        .WithMany("mjesanja")
-                        .HasForeignKey("Partijaid");
                 });
 
             modelBuilder.Entity("CSHARP.Model.Partija", b =>
