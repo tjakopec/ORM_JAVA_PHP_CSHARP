@@ -32,7 +32,7 @@ class Start
         //$this->ucitajPartije();
         //$this->insert();
 
-        //$this->select();
+        $this->select();
         //$this->update();
         //$this->delete();
     }
