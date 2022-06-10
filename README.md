@@ -146,7 +146,13 @@ Ne radi mi jer nije pokupio povezane podatke. POMOĆ!!
 * &gt; 30 commits
 * Trajanje pripreme materijala cca 10 sati.
 * Završio s izradom materijala u četvrtak, 09. 06. 2022 u 14:20
+
 <img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/Priprema.jpeg?raw=true">
+
+* Na predavanju bilo 20 polaznika
+<img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/predavanje1.jpg?raw=true">
+
+<img src="https://github.com/tjakopec/ORM_JAVA_PHP_CSHARP/blob/main/predavanje2.jpg?raw=true">
 
 
 # Predavač
